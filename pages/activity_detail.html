@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CollabHub | AI Medical Assistant</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Space Grotesk & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Injection of Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#783200",
+                    "background": "#fcf8ff",
+                    "outline-variant": "#c7c4d7",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffb597",
+                    "tertiary-container": "#8f3400",
+                    "on-surface-variant": "#464554",
+                    "on-surface": "#1b1b23",
+                    "primary": "#2a14b4",
+                    "surface-container-low": "#f6f2fe",
+                    "surface-dim": "#dcd8e4",
+                    "inverse-surface": "#302f39",
+                    "primary-container": "#4338ca",
+                    "secondary-fixed": "#ffdbca",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-variant": "#e4e1ed",
+                    "on-tertiary-fixed": "#360f00",
+                    "secondary": "#9d4300",
+                    "on-primary-container": "#c1beff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-secondary-fixed": "#341100",
+                    "tertiary-fixed": "#ffdbcd",
+                    "secondary-fixed-dim": "#ffb690",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fcf8ff",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fcf8ff",
+                    "tertiary": "#692400",
+                    "on-tertiary-container": "#ffb393",
+                    "inverse-on-surface": "#f3effb",
+                    "on-background": "#1b1b23",
+                    "error": "#ba1a1a",
+                    "outline": "#777586",
+                    "on-primary-fixed-variant": "#372abf",
+                    "surface-container-high": "#eae6f3",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#5c2400",
+                    "surface-tint": "#5148d7",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#e3dfff",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#fd761a",
+                    "surface-container-highest": "#e4e1ed",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-primary-fixed": "#100069",
+                    "surface-container": "#f0ecf8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "24px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "xxl": "48px"
+            },
+            "fontFamily": {
+                    "h5": ["Space Grotesk"],
+                    "h6": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "h1-mobile": ["Space Grotesk"],
+                    "body-sm": ["Inter"],
+                    "h2": ["Space Grotesk"],
+                    "body-lg": ["Inter"],
+                    "h4": ["Space Grotesk"],
+                    "h1": ["Space Grotesk"],
+                    "h3": ["Space Grotesk"],
+                    "label": ["Inter"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "h5": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "h6": ["16px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h4": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf8ff;
+            color: #1b1b23;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .skill-bar-bg {
+            background: #E2E8F0;
+            height: 6px;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .skill-bar-fill {
+            height: 100%;
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-center items-center px-gutter h-16 transition-all duration-300" id="main-nav">
+<div class="w-full max-w-[1200px] flex justify-between items-center">
+<div class="flex items-center gap-xl">
+<span class="text-h4 font-h4 font-bold text-primary">CollabHub</span>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label text-label" href="feed.html">Feed</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label text-label" href="dashboard.html">Dashboard</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label text-label" href="create_activity.html">Create</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors" onclick="window.location.href='notifications.html'">notifications</span>
+</div>
+<a href="profile.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant block">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a female researcher with glasses, smiling confidently against a soft-focus laboratory background. The lighting is bright and natural, reinforcing the modern academic theme with clean indigo and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR-RTmQBuKazy7glZLxc0TMK4Huqzh7eFGEGH7hFU0bxSiCCW4viGsRFcICI7IBFyvvGbWHfXlK3AarPW8DamH9zUxpmvvK3u5YWQRseS9KkskjrEXQe-yhyP510-Dw0og2g3MrfhqxFBh1pjT2nQH5TfAtxUJkcW9v8dl5jq4LDNovROoJybFZPwPPnVQb1Pa2G4GnJI18PDE0VC_Q_HXPzqvu-aRECe2FpC5heHKrwu0qcSa767FPw"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-xxl px-gutter max-w-[1200px] mx-auto min-h-screen">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-xl mb-xxl">
+<div class="lg:col-span-8 flex flex-col justify-center">
+<div class="flex items-center gap-sm mb-md">
+<span class="bg-primary-container text-on-primary-container px-sm py-xs rounded-lg font-label text-label">Healthcare &amp; AI</span>
+<span class="text-on-surface-variant flex items-center gap-xs font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                        Ends in 4 days
+                    </span>
+</div>
+<h1 class="font-h1 text-h1-mobile lg:text-h1 mb-md leading-tight text-on-surface">AI Medical Assistant</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-xl">
+                    Developing a diagnostic tool for rural clinics using Computer Vision to bridge the gap in healthcare accessibility.
+                </p>
+<div class="flex flex-wrap items-center gap-lg">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a male data scientist wearing a minimalist tech vest, working in a sunlit office with architectural sketches in the background. The color palette is high-contrast with deep indigos and crisp whites, conveying innovation and credibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkioZxKuRqzEva7lDuNCLCVTFWuNUbHyW62qXn4UhTG-MxR8EuM27djQptlfJkkMr66lq901ymY2-27IOILI1eiLebBqz1OC9Ica0tT5a5BHRGuSuD2tS7YOeD0u9ghyQp_9yOjvX6yN3hcZpdrB1H_o-hqn3yeLT816MPb2LmrsiHr-k_2dV6c5HDS5RsNdBzmH737xZqaBoaol3zu7u8EMokHQ3Ue64alFSMvmisbT4q_UcyBfdoaQ"/>
+</div>
+<div>
+<p class="font-label text-label text-on-surface">Dr. Elena Rodriguez</p>
+<p class="font-caption text-caption text-outline">Lead AI Researcher</p>
+</div>
+</div>
+<div class="h-10 w-px bg-outline-variant hidden sm:block"></div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-outline">Deadline</span>
+<span class="font-h6 text-h6 text-primary" id="countdown">04d 12h 30m</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 relative h-64 lg:h-auto rounded-xl overflow-hidden border border-outline-variant shadow-lg group">
+<div class="absolute inset-0 bg-primary opacity-10 group-hover:opacity-20 transition-opacity z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic medical diagnosis screen showing a complex 3D human lung scan with glowing blue neural network overlays. The aesthetic is clean, clinical, and high-tech, using a primary palette of deep indigo and white with subtle orange accents for data highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjzdCAEfeQ01Jp6f8vDEBQmLKdqi6yvwM0wXnG32C5Ezp26HleexNwaWyRCJSNoCQQwbNUMeCX0GjgBlJBNEe1Y0H2n0WgQmupkNrcclXJ4rmyR0Q1_N_ENgRA-LJpTaMZHLO4LDFhGOiUpG7kO9q7qSNX2MwFctps_2mi3gi6uxHlN2nzVMXyEv7AS2teH4RSSjRtcMYh7iHKLa9Cem58tE-9a71VCW0TXCVzF90eX3CtsKDGYRWkBQ"/>
+<div class="absolute bottom-md left-md right-md z-20">
+<button class="w-full bg-primary text-on-primary font-h6 text-h6 py-md rounded-lg shadow-xl hover:scale-[1.02] active:scale-95 transition-all" onclick="window.location.href='application_form.html'">Apply Now</button>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl items-start">
+<!-- Left Side: Description & Tech Stack -->
+<div class="lg:col-span-2 space-y-xl">
+<!-- Eligibility Banner (Dynamic State) -->
+<div class="bg-amber-50 border border-amber-200 p-lg rounded-xl flex items-start gap-md animate-pulse-subtle">
+<span class="material-symbols-outlined text-amber-600">warning</span>
+<div>
+<h4 class="font-h6 text-h6 text-amber-900">Skill Gap Detected</h4>
+<p class="font-body-sm text-body-sm text-amber-800">You currently meet 75% of the requirements. To become highly eligible, you need <span class="font-bold">PyTorch Level 4</span> (current: Level 2).</p>
+<button class="mt-sm text-amber-900 underline font-label text-label decoration-amber-400" onclick="window.location.href='verify_method.html'">View Recommended Courses</button>
+</div>
+</div>
+<!-- Description Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<h3 class="font-h4 text-h4 mb-md text-on-surface">Project Mission</h3>
+<p class="text-on-surface-variant mb-lg leading-relaxed">
+                        In many rural communities, access to specialized medical diagnosis is a luxury. Our mission is to leverage low-power edge computing and advanced Computer Vision models to provide real-time diagnostic support for common respiratory and skin conditions. We are looking for passionate collaborators to help refine our models and build a robust, offline-first mobile interface.
+                    </p>
+<h4 class="font-h6 text-h6 mb-sm text-on-surface">Tech Stack</h4>
+<div class="flex flex-wrap gap-sm">
+<span class="bg-surface-container-high border border-outline-variant px-md py-xs rounded-full font-label text-label text-primary">PyTorch</span>
+<span class="bg-surface-container-high border border-outline-variant px-md py-xs rounded-full font-label text-label text-primary">React Native</span>
+<span class="bg-surface-container-high border border-outline-variant px-md py-xs rounded-full font-label text-label text-primary">OpenCV</span>
+<span class="bg-surface-container-high border border-outline-variant px-md py-xs rounded-full font-label text-label text-primary">FastAPI</span>
+<span class="bg-surface-container-high border border-outline-variant px-md py-xs rounded-full font-label text-label text-primary">Redis</span>
+</div>
+</div>
+<!-- Team Progress -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<div class="flex justify-between items-end mb-md">
+<h3 class="font-h4 text-h4 text-on-surface">Team Status</h3>
+<span class="font-h6 text-h6 text-primary">2 of 5 spots filled</span>
+</div>
+<div class="w-full bg-outline-variant h-4 rounded-full overflow-hidden mb-lg">
+<div class="bg-primary h-full w-[40%] transition-all duration-1000 ease-out"></div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-md">
+<!-- Spot 1: Filled -->
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male software engineer in a minimal urban setting, wearing a dark hoodie. High-key lighting, modern clean aesthetic with a focus on professional readiness and tech-forward energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACo3-uMfkG0UIv3fP6rwbZgw040pgfvixtfHsCxMfZSPu2M3b7QmD5oEnbWlp1Qj0npUVe17JDNuGWYI2_sGnPrqQJsyEyZYJJKKdln_NVZCmluLby96tu6qWIRfIaDcXBnacw4b_MH7KdXcHnpOkAsXz2ZKOSfQksEDlNtYzYr27btrmzWtwvrO0iQmVAH7FpZWbAy6iT3uWxiGEDjjMbW0IUEW95JZ5_g_mUgbRLZdchmSHq_hsaLQ"/>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Lead Dev</span>
+</div>
+<!-- Spot 2: Filled -->
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a female UX designer with a creative look, working at a desk with multi-monitor setup in a blurred background. Aesthetic focuses on high contrast, indigo accents, and professional academic trust." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6ltrtfOVBXacdiXp_tNbWvQoRrzE1D-HCghba9g9IPIkJMNcSnZy8N6kwlxHSQzw0BUFpy3GGTH_kedfV7ddQH4-xwTEuZ7yCmq0lEh-2CmoCUGaiZXM2vLkOy94w3WJ0CMz45225eZpNQ_FGFv6wQvY-WwV5eAJtJBztAsf6PJHSwmrM1hthkvsYC61nqtKzIamUYpZkFfSTQ9rtDDgBusWeEIGWI2X5xw5Qae84gb0RaRCxUojC0g"/>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Designer</span>
+</div>
+<!-- Spot 3: Open -->
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full border-2 border-dashed border-outline-variant flex items-center justify-center bg-surface-container">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+<span class="font-caption text-caption text-outline">Open</span>
+</div>
+<!-- Spot 4: Open -->
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full border-2 border-dashed border-outline-variant flex items-center justify-center bg-surface-container">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+<span class="font-caption text-caption text-outline">Open</span>
+</div>
+<!-- Spot 5: Open -->
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 rounded-full border-2 border-dashed border-outline-variant flex items-center justify-center bg-surface-container">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+<span class="font-caption text-caption text-outline">Open</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Skills Comparison & CTA -->
+<aside class="space-y-xl sticky top-24">
+<!-- Match Score Badge Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl text-center">
+<h4 class="font-h6 text-h6 text-on-surface-variant mb-lg">Your Match Score</h4>
+<div class="relative w-32 h-32 mx-auto mb-md">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<circle class="text-surface-container-high stroke-current" cx="50" cy="50" fill="transparent" r="40" stroke-width="8"></circle>
+<circle class="text-secondary stroke-current" cx="50" cy="50" fill="transparent" r="40" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round" stroke-width="8" transform="rotate(-90 50 50)"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-h3 text-h3 text-on-surface">75%</span>
+</div>
+</div>
+<p class="font-caption text-caption text-outline mb-xl">Based on your verified skills</p>
+<button class="w-full bg-secondary text-on-secondary font-h6 text-h6 py-md rounded-lg shadow-lg hover:brightness-110 active:scale-95 transition-all uppercase tracking-wide" onclick="window.location.href='skill_verification.html'">Boost Eligibility</button>
+</div>
+<!-- Skills Comparison -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<h3 class="font-h6 text-h6 mb-lg text-on-surface">Skills Comparison</h3>
+<div class="space-y-lg">
+<!-- Skill 1 -->
+<div>
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label text-label flex items-center gap-xs">
+                                    Computer Vision
+                                    <span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+<span class="font-caption text-caption text-outline">Lvl 4 Required</span>
+</div>
+<div class="skill-bar-bg relative">
+<!-- Required Level (dotted marker) -->
+<div class="absolute top-0 left-[80%] bottom-0 w-0.5 bg-outline-variant z-10"></div>
+<!-- Your Level -->
+<div class="skill-bar-fill bg-primary w-[90%]"></div>
+</div>
+<p class="mt-xs font-caption text-caption text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                Your Level: 4.5
+                            </p>
+</div>
+<!-- Skill 2 -->
+<div>
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label text-label">PyTorch</span>
+<span class="font-caption text-caption text-outline">Lvl 4 Required</span>
+</div>
+<div class="skill-bar-bg relative">
+<div class="absolute top-0 left-[80%] bottom-0 w-0.5 bg-outline-variant z-10"></div>
+<div class="skill-bar-fill bg-amber-500 w-[40%]"></div>
+</div>
+<p class="mt-xs font-caption text-caption text-amber-600 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                                Your Level: 2.0
+                            </p>
+</div>
+<!-- Skill 3 -->
+<div>
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label text-label">Medical Informatics</span>
+<span class="font-caption text-caption text-outline">Lvl 2 Required</span>
+</div>
+<div class="skill-bar-bg relative">
+<div class="absolute top-0 left-[40%] bottom-0 w-0.5 bg-outline-variant z-10"></div>
+<div class="skill-bar-fill bg-primary w-[60%]"></div>
+</div>
+<p class="mt-xs font-caption text-caption text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                Your Level: 3.0
+                            </p>
+</div>
+</div>
+</div>
+<!-- Shared CTA Secondary -->
+<div class="bg-primary-container p-xl rounded-xl text-center text-on-primary">
+<p class="font-h5 text-h5 mb-md">Ready to collaborate?</p>
+<button class="w-full bg-surface text-primary font-h6 text-h6 py-md rounded-lg shadow-sm hover:bg-surface-bright transition-colors active:scale-95">Send Application</button>
+<p class="mt-sm font-caption text-caption text-on-primary-container opacity-80">Applications close Jan 25th, 2024</p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container py-xl px-gutter border-t border-outline-variant mt-xxl">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<div>
+<span class="font-h6 text-h6 font-bold text-on-surface">CollabHub</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-xs">© 2024 CollabHub. Skill-verified collaboration.</p>
+</div>
+<div class="flex gap-lg">
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">About</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Privacy</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Terms</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Support</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for Sticky Nav
+        window.onscroll = function() {
+            const nav = document.getElementById('main-nav');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('shadow-md', 'h-14');
+                nav.classList.remove('h-16');
+            } else {
+                nav.classList.remove('shadow-md', 'h-14');
+                nav.classList.add('h-16');
+            }
+        };
+
+        // Simple Countdown Simulation
+        function startCountdown() {
+            let days = 4, hours = 12, minutes = 30;
+            const timerElement = document.getElementById('countdown');
+            
+            setInterval(() => {
+                minutes--;
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                }
+                if (hours < 0) {
+                    hours = 23;
+                    days--;
+                }
+                timerElement.innerText = `${days}d ${hours}h ${minutes}m`;
+            }, 60000); // Update every minute
+        }
+        startCountdown();
+
+        // Skill bar animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.skill-bar-fill');
+            bars.forEach(bar => {
+                const targetWidth = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = targetWidth;
+                }, 300);
+            });
+        });
+    </script>
+</body></html>

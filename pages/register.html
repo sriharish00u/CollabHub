@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | CollabHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#4338ca",
+                        "on-surface": "#1b1b23",
+                        "tertiary-container": "#8f3400",
+                        "surface": "#fcf8ff",
+                        "surface-dim": "#dcd8e4",
+                        "surface-bright": "#fcf8ff",
+                        "on-secondary-fixed-variant": "#783200",
+                        "inverse-surface": "#302f39",
+                        "on-primary-fixed-variant": "#372abf",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fd761a",
+                        "on-primary-fixed": "#100069",
+                        "surface-container-low": "#f6f2fe",
+                        "surface-container": "#f0ecf8",
+                        "secondary-fixed": "#ffdbca",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#ffb393",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb597",
+                        "on-secondary-fixed": "#341100",
+                        "tertiary-fixed": "#ffdbcd",
+                        "surface-container-highest": "#e4e1ed",
+                        "secondary": "#9d4300",
+                        "inverse-on-surface": "#f3effb",
+                        "on-tertiary-fixed": "#360f00",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "primary-fixed": "#e3dfff",
+                        "outline-variant": "#c7c4d7",
+                        "outline": "#777586",
+                        "primary": "#2a14b4",
+                        "on-background": "#1b1b23",
+                        "on-primary-container": "#c1beff",
+                        "background": "#fcf8ff",
+                        "tertiary": "#692400",
+                        "on-secondary-container": "#5c2400",
+                        "surface-container-high": "#eae6f3",
+                        "on-surface-variant": "#464554",
+                        "surface-variant": "#e4e1ed",
+                        "surface-tint": "#5148d7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "h5": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "label": ["Inter"],
+                        "h1-mobile": ["Space Grotesk"],
+                        "h3": ["Space Grotesk"],
+                        "h1": ["Space Grotesk"],
+                        "body-sm": ["Inter"],
+                        "h2": ["Space Grotesk"],
+                        "h6": ["Space Grotesk"],
+                        "h4": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h5": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "h1-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "h3": ["30px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h2": ["36px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "h6": ["16px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h4": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2a14b4 !important;
+            box-shadow: 0 0 0 2px rgba(67, 56, 202, 0.1);
+        }
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<main class="flex min-h-screen">
+<!-- Left Side: Atmospheric Branding & Visual -->
+<section class="hidden lg:flex w-1/2 bg-primary relative flex-col justify-center items-center overflow-hidden p-xxl">
+<!-- Background Layered Gradients -->
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_50%_50%,_#4338ca_0%,_transparent_60%)]"></div>
+<div class="relative z-10 max-w-lg text-white">
+<div class="mb-xl">
+<span class="inline-block px-sm py-xs bg-white/10 rounded-lg font-label text-label tracking-widest mb-md uppercase">Knowledge Exchange</span>
+<h1 class="font-h1 text-h1 mb-lg leading-none">Bridge the gap between ideas.</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed opacity-90 leading-relaxed">
+                        CollabHub is the premier ecosystem for skill-verified academic collaboration. Join 10,000+ students and researchers across 200+ departments in co-creating the future.
+                    </p>
+</div>
+<!-- Abstract Visual: Floating Cards representation -->
+<div class="grid grid-cols-2 gap-md opacity-80 scale-90 origin-left">
+<div class="p-lg bg-white/5 border border-white/10 rounded-xl">
+<span class="material-symbols-outlined text-secondary-fixed mb-sm">verified</span>
+<div class="font-h6 text-h6">Verified Skills</div>
+<div class="text-caption opacity-70">Peer-reviewed expertise and certifications.</div>
+</div>
+<div class="p-lg bg-white/5 border border-white/10 rounded-xl translate-y-md">
+<span class="material-symbols-outlined text-secondary-fixed mb-sm">hub</span>
+<div class="font-h6 text-h6">Smart Matching</div>
+<div class="text-caption opacity-70">AI-driven partner discovery based on project goals.</div>
+</div>
+</div>
+</div>
+<!-- Absolute Decorative Elements -->
+<div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-primary-fixed-dim/20 to-transparent"></div>
+</section>
+<!-- Right Side: Registration Form -->
+<section class="w-full lg:w-1/2 flex flex-col justify-center items-center bg-surface p-gutter md:p-xxl scroll-hide overflow-y-auto">
+<div class="w-full max-w-[480px]">
+<!-- Header -->
+<div class="mb-xl text-center lg:text-left">
+<div class="inline-flex items-center gap-xs mb-md">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]">handshake</span>
+</div>
+<span class="font-h4 text-h4 text-primary font-bold">CollabHub</span>
+</div>
+<h2 class="font-h2 text-h2 mb-xs">Create your profile</h2>
+<p class="text-on-surface-variant font-body-md">Fill in your academic credentials to get started.</p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-lg" id="registration-form">
+<!-- Photo Upload Placeholder -->
+<div class="flex items-center gap-lg mb-xl">
+<div class="relative group cursor-pointer">
+<div class="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center border-2 border-dashed border-outline-variant group-hover:border-primary transition-colors overflow-hidden">
+<span class="material-symbols-outlined text-outline text-[32px] group-hover:text-primary">add_a_photo</span>
+</div>
+</div>
+<div>
+<span class="font-label text-label block mb-xs text-on-surface">Profile Photo</span>
+<p class="text-caption text-on-surface-variant">JPG or PNG. Max size 2MB.</p>
+</div>
+</div>
+<!-- Personal Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs">Full Name</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs">College Email</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" placeholder="john@university.edu" type="email"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs">Password</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" placeholder="Min. 8 characters" type="password"/>
+</div>
+<!-- Academic Info Grid -->
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs">College/University</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" placeholder="Search institution..." type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs">Department</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" placeholder="e.g. Computer Science" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs">Year</label>
+<select class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Select Year</option>
+<option>Freshman</option>
+<option>Sophomore</option>
+<option>Junior</option>
+<option>Senior</option>
+<option>Graduate (Master's)</option>
+<option>Graduate (PhD)</option>
+<option>Post-doc / Faculty</option>
+</select>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between items-center ml-xs">
+<label class="font-label text-label text-on-surface-variant">Short Bio</label>
+<span class="text-caption text-outline">Optional</span>
+</div>
+<textarea class="w-full p-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all resize-none" placeholder="Tell us about your interests and expertise..." rows="3"></textarea>
+</div>
+<!-- Terms Checkbox -->
+<div class="flex items-start gap-sm mt-md">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" id="terms" type="checkbox"/>
+<label class="text-caption text-on-surface-variant" for="terms">
+                            I agree to the <a class="text-primary font-medium hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-medium hover:underline" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+<!-- Register Button -->
+<button class="w-full h-14 bg-primary text-white font-h6 text-h6 rounded-lg hover:bg-primary/90 active:scale-[0.98] transition-all flex items-center justify-center gap-sm mt-xl" type="submit">
+                        Register
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<!-- Footer Link -->
+<div class="mt-xl text-center">
+<p class="font-body-sm text-on-surface-variant">
+                        Already have an account? 
+                        <a class="text-primary font-bold ml-xs hover:underline decoration-2 underline-offset-4 transition-all" href="login.html">Sign in instead</a>
+</p>
+</div>
+</div>
+<!-- Footer Small -->
+<footer class="mt-xxl pt-lg border-t border-outline-variant/30 w-full max-w-[480px] flex justify-between items-center text-caption text-outline">
+<span>© 2024 CollabHub</span>
+<div class="flex gap-md">
+<a class="hover:text-primary" href="#">Help</a>
+<a class="hover:text-primary" href="#">Privacy</a>
+</div>
+</footer>
+</section>
+</main>
+<!-- Micro-interactions Script -->
+<script>
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Animation for visual feedback
+            const btn = e.target.querySelector('button');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Processing...';
+            btn.classList.add('opacity-80', 'cursor-wait');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Welcome Aboard!';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-600');
+            }, 1500);
+        });
+
+        // Simple input focus visuals if needed
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                const label = input.previousElementSibling;
+                if(label && label.classList.contains('text-label')) {
+                    label.classList.replace('text-on-surface-variant', 'text-primary');
+                }
+            });
+            input.addEventListener('blur', () => {
+                const label = input.previousElementSibling;
+                if(label && label.classList.contains('text-label')) {
+                    label.classList.replace('text-primary', 'text-on-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>

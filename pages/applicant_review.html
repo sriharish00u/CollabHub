@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Applicant Review: AI Medical Assistant | CollabHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "outline": "#777586",
+                        "on-primary-container": "#c1beff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1b23",
+                        "tertiary-fixed-dim": "#ffb597",
+                        "surface-container-low": "#f6f2fe",
+                        "surface": "#fcf8ff",
+                        "secondary-fixed": "#ffdbca",
+                        "primary-fixed": "#e3dfff",
+                        "on-tertiary-container": "#ffb393",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbcd",
+                        "primary": "#2a14b4",
+                        "primary-container": "#4338ca",
+                        "on-background": "#1b1b23",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf8ff",
+                        "tertiary-container": "#8f3400",
+                        "secondary-container": "#fd761a",
+                        "tertiary": "#692400",
+                        "surface-container-highest": "#e4e1ed",
+                        "outline-variant": "#c7c4d7",
+                        "surface-variant": "#e4e1ed",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-primary-fixed-variant": "#372abf",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#341100",
+                        "surface-dim": "#dcd8e4",
+                        "secondary-fixed-dim": "#ffb690",
+                        "secondary": "#9d4300",
+                        "surface-tint": "#5148d7",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-primary-fixed": "#100069",
+                        "on-secondary-fixed-variant": "#783200",
+                        "surface-container": "#f0ecf8",
+                        "on-surface-variant": "#464554",
+                        "inverse-surface": "#302f39",
+                        "surface-container-high": "#eae6f3",
+                        "surface-bright": "#fcf8ff",
+                        "inverse-primary": "#c3c0ff",
+                        "inverse-on-surface": "#f3effb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5c2400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "h5": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "h3": ["Space Grotesk"],
+                        "h1": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "label": ["Inter"],
+                        "h4": ["Space Grotesk"],
+                        "h6": ["Space Grotesk"],
+                        "caption": ["Inter"],
+                        "h1-mobile": ["Space Grotesk"],
+                        "h2": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h5": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h3": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "h4": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h6": ["16px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "h1-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "h2": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface border-b border-outline-variant max-w-[1200px] mx-auto left-1/2 -translate-x-1/2">
+<div class="flex items-center gap-md">
+<span class="text-h4 font-h4 font-bold text-primary">CollabHub</span>
+<div class="hidden md:flex gap-lg ml-xl">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label text-label" href="feed.html">Feed</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label text-label" href="dashboard.html">Dashboard</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label text-label" href="create_activity.html">Create</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-low border-none rounded-lg px-md py-xs text-body-sm w-64 focus:ring-2 focus:ring-primary" placeholder="Search collaborations..." type="text"/>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+<button class="p-xs hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container text-label">
+<img class="w-full h-full rounded-full object-cover" data-alt="Professional studio portrait of a university researcher with a clean, minimalist background, wearing a professional blazer. High-quality lighting, soft shadows, part of the CollabHub's modern indigo-themed ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXdA525deIKuNNAb-vvkQ9CwCB7YTPTL_s2jPObcrZpnFfVaubDS7-3nUzIcmXdeUkgpJXvnfDAyztY1nzuf3edRi-egIzdlPQHWTKiZeleyqKoTzjQjR6DJ6mGGAuqKPdqzFjMFi6ilfdn9p6F88Qj9MiiE-rBSiYr9r2JalZlaun_Hx1D6TIMWM4oDYUwSZacIkiCOlweor3d9BxnoNHQIklikk7GDB7aPtclL_2aRjKQDMLNcWs0w"/>
+</div>
+</div>
+</nav>
+<main class="max-w-[1200px] mx-auto pt-24 px-gutter pb-xxl">
+<!-- Header -->
+<header class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div class="flex flex-col gap-xs">
+<a class="flex items-center gap-xs text-primary font-label text-label hover:underline" href="activity_detail.html">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Back to Activity Detail
+                </a>
+<div class="flex items-baseline gap-md mt-sm">
+<h1 class="font-h2 text-h2 text-on-surface">Applicant Review</h1>
+<span class="font-h5 text-h5 text-outline-variant">AI Medical Assistant</span>
+</div>
+<p class="font-body-md text-on-surface-variant">12 Total Applicants</p>
+</div>
+</header>
+<!-- Filters & Sort -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md mb-lg flex flex-wrap items-center justify-between gap-md">
+<div class="flex flex-wrap items-center gap-md">
+<div class="flex flex-col gap-1">
+<label class="font-label text-[10px] text-outline uppercase tracking-wider">Sort by</label>
+<select class="bg-transparent border-none font-label text-label text-primary focus:ring-0 p-0 cursor-pointer">
+<option>Best Match (Default)</option>
+<option>Newest First</option>
+<option>Highest Skill Level</option>
+</select>
+</div>
+<div class="h-8 w-px bg-outline-variant hidden sm:block"></div>
+<div class="flex flex-col gap-1">
+<label class="font-label text-[10px] text-outline uppercase tracking-wider">Status</label>
+<div class="flex gap-xs">
+<button class="px-md py-1 rounded-full bg-primary text-white font-label text-label">All</button>
+<button class="px-md py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label text-label hover:bg-surface-variant">Pending</button>
+<button class="px-md py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label text-label hover:bg-surface-variant">Approved</button>
+</div>
+</div>
+</div>
+<div class="relative w-full md:w-auto">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">person_search</span>
+<input class="w-full md:w-64 pl-10 pr-md py-2 bg-surface border border-outline-variant rounded-lg text-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Search by name..." type="text"/>
+</div>
+</section>
+<!-- Applicant List -->
+<div class="flex flex-col gap-md" id="applicant-list">
+<!-- Applicant Card 1 -->
+<article class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 group">
+<div class="p-lg flex flex-col lg:flex-row gap-lg">
+<!-- Left: Profile & Score -->
+<div class="flex items-center gap-lg lg:w-1/3">
+<div class="relative w-20 h-20 flex-shrink-0">
+<!-- Progress Ring -->
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="transparent" r="44" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-secondary-container progress-ring-circle" cx="50" cy="50" fill="transparent" r="44" stroke="currentColor" stroke-dasharray="276.46" stroke-dashoffset="22" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-2 rounded-full overflow-hidden border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male computer science student with glasses, smiling confidently against a soft-focus laboratory background. High-key lighting, modern professional aesthetic, navy and orange color accents consistent with CollabHub's branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd33DabiuJpeapG3LfPXsxAg2fDN8lk65RMITSoSIwqbQOr0TW_DNJoXIlHPDtJyrNOvalG_IyAi8WLgh7BMJGr0IU1DDoIQgu5EBiN3sg8iI-HbD1HfO4EUCwewaDCGqoPyoLkbAX1tgQwq6Nn_GFs6Mo7OMjYzM66OG7x2ll_ohRXMPOxxvXH6Qycncfa42miJDCAd5gDpsDwVAhwyFu61pTlAx-8WY9LWOngNFyR0HhedjaeP0ihQ"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary-container text-white text-[10px] font-bold w-7 h-7 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                                92%
+                            </div>
+</div>
+<div class="flex flex-col">
+<h3 class="font-h5 text-h5 text-on-surface">Alex Rivera</h3>
+<p class="font-body-sm text-on-surface-variant">Computer Science, 3rd Year</p>
+<span class="mt-xs px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label text-[10px] w-fit">PENDING</span>
+</div>
+</div>
+<!-- Middle: Skill Comparison -->
+<div class="flex-1 flex flex-col justify-center gap-sm">
+<h4 class="font-label text-label text-outline uppercase tracking-wider">Required Skills Analysis</h4>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between font-label text-[11px] mb-1">
+<span>Computer Vision</span>
+<span class="text-primary font-bold">Lvl 4 / <span class="text-outline">3</span></span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[80%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-[11px] mb-1">
+<span>PyTorch</span>
+<span class="text-primary font-bold">Lvl 5 / <span class="text-outline">4</span></span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[100%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-[11px] mb-1">
+<span>Medical Informatics</span>
+<span class="text-secondary-container font-bold">Lvl 2 / <span class="text-outline">3</span></span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full w-[40%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Actions -->
+<div class="flex lg:flex-col items-center justify-center gap-sm lg:w-48">
+<button class="w-full py-2.5 bg-primary text-white rounded-lg font-label text-label hover:bg-primary-container transition-colors active:scale-95 shadow-sm">
+                            Approve
+                        </button>
+<button class="w-full py-2.5 border border-error text-error rounded-lg font-label text-label hover:bg-error-container transition-colors active:scale-95">
+                            Reject
+                        </button>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="this.closest('article').querySelector('.details-panel').classList.toggle('hidden')">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Expanded Details -->
+<div class="details-panel hidden border-t border-outline-variant bg-surface-container-lowest p-lg animate-in fade-in slide-in-from-top-2 duration-300">
+<div class="grid md:grid-cols-2 gap-lg">
+<div>
+<h4 class="font-h6 text-h6 text-on-surface mb-sm">Candidate Bio</h4>
+<p class="font-body-sm text-on-surface-variant italic">
+                                "Passionate about applying deep learning to clinical diagnosis. Previous experience with MNIST medical variants and internship at HealthTech Inc. Eager to contribute to the AI Medical Assistant project's frontend-backend integration."
+                            </p>
+</div>
+<div>
+<h4 class="font-h6 text-h6 text-on-surface mb-sm">Verified Skills</h4>
+<div class="flex flex-wrap gap-xs">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-label text-[11px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    React.js
+                                </span>
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-primary/20 text-primary font-label text-[11px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    Node.js
+                                </span>
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-primary/40 text-primary font-label text-[11px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    Python
+                                </span>
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-primary/60 text-white font-label text-[11px]">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    TensorFlow
+                                </span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Applicant Card 2 -->
+<article class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 group">
+<div class="p-lg flex flex-col lg:flex-row gap-lg opacity-90">
+<div class="flex items-center gap-lg lg:w-1/3">
+<div class="relative w-20 h-20 flex-shrink-0">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="transparent" r="44" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-secondary-container progress-ring-circle" cx="50" cy="50" fill="transparent" r="44" stroke="currentColor" stroke-dasharray="276.46" stroke-dashoffset="65" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-2 rounded-full overflow-hidden border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a female PhD student with a focused, intelligent expression. She is in a modern office with glass walls reflecting city lights. Soft cool-toned lighting, ultra-high definition, professional branding style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6GOF2KYmdMmaqIj2o_EnZ-JFoJ2Qm2RZB-ihxbz4Cqb2MKnsxFtsTNNfD1uSOEvkH236GqaxrioE31v-Q_w2PF4hHERfJ-_F_7jsEmWjFRuUdj8fEDzoXeeHXNL93aH7QkLmzAcq9EHypanSGTnuJgAQOmgmO4x7ww5kJXI81IfYtuFd8fZgELTQ43AtHGbTdxky6Ee3IP-qtMkvjDoDHci22HK1YaE_i9evaj1y4d_UWLWdhHiF68A"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary-container text-white text-[10px] font-bold w-7 h-7 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                                78%
+                            </div>
+</div>
+<div class="flex flex-col">
+<h3 class="font-h5 text-h5 text-on-surface">Sarah Chen</h3>
+<p class="font-body-sm text-on-surface-variant">Bio-Informatics, PhD Cand.</p>
+<span class="mt-xs px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label text-[10px] w-fit">WAITLISTED</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center gap-sm">
+<h4 class="font-label text-label text-outline uppercase tracking-wider">Required Skills Analysis</h4>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between font-label text-[11px] mb-1">
+<span>Computer Vision</span>
+<span class="text-primary font-bold">Lvl 2 / <span class="text-outline">3</span></span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[40%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-[11px] mb-1">
+<span>PyTorch</span>
+<span class="text-primary font-bold">Lvl 3 / <span class="text-outline">4</span></span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[60%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-[11px] mb-1">
+<span>Medical Informatics</span>
+<span class="text-primary font-bold">Lvl 5 / <span class="text-outline">3</span></span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[100%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex lg:flex-col items-center justify-center gap-sm lg:w-48">
+<button class="w-full py-2.5 bg-primary text-white rounded-lg font-label text-label hover:bg-primary-container transition-colors active:scale-95 shadow-sm">
+                            Approve
+                        </button>
+<button class="w-full py-2.5 border border-error text-error rounded-lg font-label text-label hover:bg-error-container transition-colors active:scale-95">
+                            Reject
+                        </button>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="this.closest('article').querySelector('.details-panel').classList.toggle('hidden')">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+<div class="details-panel hidden border-t border-outline-variant bg-surface-container-lowest p-lg">
+<p class="font-body-sm text-on-surface-variant">Detailed bio and skills loading...</p>
+</div>
+</article>
+<!-- Applicant Card 3 (Approved State) -->
+<article class="bg-surface-container-low border-2 border-primary/20 rounded-xl overflow-hidden shadow-sm">
+<div class="p-lg flex flex-col lg:flex-row gap-lg">
+<div class="flex items-center gap-lg lg:w-1/3">
+<div class="relative w-20 h-20 flex-shrink-0">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="transparent" r="44" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-secondary-container progress-ring-circle" cx="50" cy="50" fill="transparent" r="44" stroke="currentColor" stroke-dasharray="276.46" stroke-dashoffset="15" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-2 rounded-full overflow-hidden border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="Headshot of a professional engineer in a tech-forward workspace. Modern workspace background with blurred code on screens. High-contrast lighting, indigo and coral accents, sharp detail, professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKEdV2zp-gixyrMjHjNWL221rtIztllnfymyoe2NUryYMbP5XqXtueUkBBfV-cdtHq06vliXavCB_dh6ZvG_CtJgZ55XbrV0Ww4ZFIX33xnhp-VTMYI-q2hfsIPmTfOKcKZPCwgC9ZodTMnisNfMQDJfxmSEPpq0DrWDtzpHa19WDsI9Hdm3uE8VNZ9KWzu7C7VlGpmtI4HZ1jKopv92pfgxX2cDK6a-PXPFUHM1TEJnnXp6enq7TfQg"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary-container text-white text-[10px] font-bold w-7 h-7 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                                95%
+                            </div>
+</div>
+<div class="flex flex-col">
+<h3 class="font-h5 text-h5 text-on-surface">Jordan Smyth</h3>
+<p class="font-body-sm text-on-surface-variant">Mathematics &amp; AI, 4th Year</p>
+<span class="mt-xs px-2 py-0.5 rounded bg-primary text-white font-label text-[10px] w-fit">APPROVED</span>
+</div>
+</div>
+<div class="flex-1 flex items-center justify-center">
+<div class="flex items-center gap-md text-primary bg-primary/5 px-lg py-md rounded-lg">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+<span class="font-body-md font-medium text-center">Successfully matched to team. <br/><span class="text-body-sm font-normal text-on-surface-variant">Onboarding message sent.</span></span>
+</div>
+</div>
+<div class="flex lg:flex-col items-center justify-center gap-sm lg:w-48">
+<button class="w-full py-2.5 border border-outline text-outline rounded-lg font-label text-label cursor-not-allowed" disabled="">
+                            Revoke
+                        </button>
+<button class="p-2 text-outline hover:text-primary transition-colors" onclick="this.closest('article').querySelector('.details-panel').classList.toggle('hidden')">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+<div class="details-panel hidden border-t border-outline-variant bg-surface-container-lowest p-lg">
+<p class="font-body-sm text-on-surface-variant">Profile summary available in Team Dashboard.</p>
+</div>
+</article>
+</div>
+<!-- Empty State (Hidden by default) -->
+<section class="hidden py-xxl flex flex-col items-center justify-center text-center animate-in fade-in duration-700" id="empty-state">
+<div class="w-24 h-24 mb-lg text-outline-variant opacity-50">
+<span class="material-symbols-outlined text-[96px]">person_off</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-surface-variant">No applicants found</h2>
+<p class="font-body-md text-outline mt-sm max-w-md">Try adjusting your filters or search terms to find candidates for the AI Medical Assistant project.</p>
+<button class="mt-lg px-xl py-2.5 border border-primary text-primary rounded-lg font-label text-label hover:bg-primary-container/10 transition-colors" onclick="resetFilters()">
+                Clear all filters
+            </button>
+</section>
+</main>
+<footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center gap-md max-w-[1200px] mx-auto border-t border-outline-variant bg-surface-container">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<span class="font-h6 text-h6 font-bold text-on-surface">CollabHub</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 CollabHub. Skill-verified collaboration.</p>
+</div>
+<div class="flex gap-lg">
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">About</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Privacy</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Terms</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Support</a>
+</div>
+</footer>
+<script>
+        function resetFilters() {
+            document.getElementById('empty-state').classList.add('hidden');
+            document.getElementById('applicant-list').classList.remove('hidden');
+            // Logic to clear actual input values would go here
+        }
+
+        // Search interaction demo
+        const searchInput = document.querySelector('input[placeholder="Search by name..."]');
+        searchInput.addEventListener('input', (e) => {
+            const list = document.getElementById('applicant-list');
+            const empty = document.getElementById('empty-state');
+            
+            if(e.target.value.toLowerCase() === 'no-one') {
+                list.classList.add('hidden');
+                empty.classList.remove('hidden');
+            } else {
+                list.classList.remove('hidden');
+                empty.classList.add('hidden');
+            }
+        });
+    </script>
+</body></html>

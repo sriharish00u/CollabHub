@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | CollabHub</title>
+<!-- Google Fonts: Space Grotesk & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#4338ca",
+                    "on-surface": "#1b1b23",
+                    "tertiary-container": "#8f3400",
+                    "surface": "#fcf8ff",
+                    "surface-dim": "#dcd8e4",
+                    "surface-bright": "#fcf8ff",
+                    "on-secondary-fixed-variant": "#783200",
+                    "inverse-surface": "#302f39",
+                    "on-primary-fixed-variant": "#372abf",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#fd761a",
+                    "on-primary-fixed": "#100069",
+                    "surface-container-low": "#f6f2fe",
+                    "surface-container": "#f0ecf8",
+                    "secondary-fixed": "#ffdbca",
+                    "secondary-fixed-dim": "#ffb690",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#c3c0ff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#ffb393",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb597",
+                    "on-secondary-fixed": "#341100",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-container-highest": "#e4e1ed",
+                    "secondary": "#9d4300",
+                    "inverse-on-surface": "#f3effb",
+                    "on-tertiary-fixed": "#360f00",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "primary-fixed": "#e3dfff",
+                    "outline-variant": "#c7c4d7",
+                    "outline": "#777586",
+                    "primary": "#2a14b4",
+                    "on-background": "#1b1b23",
+                    "on-primary-container": "#c1beff",
+                    "background": "#fcf8ff",
+                    "tertiary": "#692400",
+                    "on-secondary-container": "#5c2400",
+                    "surface-container-high": "#eae6f3",
+                    "on-surface-variant": "#464554",
+                    "surface-variant": "#e4e1ed",
+                    "surface-tint": "#5148d7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "xxl": "48px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "h5": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "label": ["Inter"],
+                    "h1-mobile": ["Space Grotesk"],
+                    "h3": ["Space Grotesk"],
+                    "h1": ["Space Grotesk"],
+                    "body-sm": ["Inter"],
+                    "h2": ["Space Grotesk"],
+                    "h6": ["Space Grotesk"],
+                    "h4": ["Space Grotesk"],
+                    "body-lg": ["Inter"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "h5": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "h1-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "h3": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "h6": ["16px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h4": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf8ff;
+            color: #1b1b23;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .input-focus-ring:focus {
+            box-shadow: 0 0 0 2px #c3c0ff;
+            border-color: #2a14b4;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+<!-- Main Content: Login Split-Screen -->
+<main class="flex-grow flex flex-col md:flex-row">
+<!-- Left Side: Hero Illustration/Photo (Canvas) -->
+<div class="relative w-full md:w-1/2 lg:w-3/5 h-64 md:h-auto overflow-hidden flex items-end">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-[10000ms] hover:scale-110" data-alt="A group of diverse university students working collaboratively in a brightly lit, high-tech engineering laboratory. They are gathered around a transparent holographic display and physical prototypes, discussing complex data. The lighting is crisp and academic, using a professional color palette of deep indigos and clean whites. The setting feels innovative and intellectual, capturing a moment of genuine discovery and teamwork." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4eX7xEDoEOtfSm5M9Pzwkd32ZKMeIi5G9NwU6quHyRH89h2tAWfgGmDOiV9f6JU2TcUVHHURrQU3H6-MVQMo8Cm-AaK1O1CsZryF0oPwP6sxzufKV79Srs-FyUoP18YTvDc9TXA7FIvbozLMYlbakWFTNO2fTu3eUQDRujhGBMUutMYlqoxL728LGClvHUaVls8tTh88ao4Zx_ovj_lwZaH9_hEkE5veQOeg9mWLlOqaUB6Op7HmhwQ')">
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<!-- Branding/Text Overlay -->
+<div class="relative z-10 p-lg md:p-xxl text-on-primary">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">hub</span>
+<span class="font-h4 text-h4 font-bold tracking-tight">CollabHub</span>
+</div>
+<h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 mb-md max-w-xl">
+                    Find your perfect teammate
+                </h1>
+<p class="font-body-lg text-body-lg text-primary-fixed max-w-md opacity-90">
+                    Join the network of skill-verified university collaborators and turn your academic projects into reality.
+                </p>
+</div>
+</div>
+<!-- Right Side: Login Form (Canvas) -->
+<div class="w-full md:w-1/2 lg:w-2/5 flex items-center justify-center bg-surface p-lg md:p-xl">
+<div class="w-full max-w-md">
+<!-- Login Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg md:p-xl rounded shadow-sm">
+<div class="mb-xl">
+<h2 class="font-h3 text-h3 text-on-surface mb-xs">Welcome Back</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Please enter your credentials to access your dashboard.</p>
+</div>
+<form class="space-y-lg" onsubmit="event.preventDefault();">
+<!-- Email Field -->
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant uppercase tracking-wider" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline text-[20px]">mail</span>
+<input class="w-full pl-xl pr-md py-md bg-surface-container border border-outline-variant rounded focus:outline-none focus:border-primary transition-all font-body-md text-body-md text-on-surface placeholder:text-outline input-focus-ring" id="email" placeholder="yourname@university.edu" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="font-label text-label text-on-surface-variant uppercase tracking-wider" for="password">Password</label>
+<a class="font-label text-label text-primary hover:underline transition-all" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
+<input class="w-full pl-xl pr-md py-md bg-surface-container border border-outline-variant rounded focus:outline-none focus:border-primary transition-all font-body-md text-body-md text-on-surface placeholder:text-outline input-focus-ring" id="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary py-md font-h6 text-h6 rounded hover:bg-primary-container active:scale-[0.98] transition-all flex justify-center items-center gap-sm" type="submit">
+                            Log In
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="my-xl flex items-center gap-md">
+<div class="flex-grow h-[1px] bg-outline-variant"></div>
+<span class="font-label text-label text-outline uppercase">Or continue with</span>
+<div class="flex-grow h-[1px] bg-outline-variant"></div>
+</div>
+<!-- SSO Buttons (Extra for UI density) -->
+<div class="grid grid-cols-1 gap-md">
+<button class="w-full flex items-center justify-center gap-md py-sm border border-outline-variant rounded font-body-md text-body-md text-on-surface hover:bg-surface-container-high transition-colors">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxrt79YtEKwpT50nX-pc8Lwm_mxdgWZEiGTpvWlZWMDYyW5kgg3ykj3zdOL6xJ04sctVvgGxvqpVSkK8Aq9PIHjY2PTeR6ppaSAVk_FBCoLlIPlUydlzRjKOZ0FW6kmk_RpqQ2zl7eKequpmS95k3J3kd6NRBhGBBbZkxs5aePZJgo8e4V88cQyjKb0M4Ggod13or7BGCYktkUQaGckLv2bmwBpu0b81PXq28Cymxu6a8E_0llxGh3fQ"/>
+                            University SSO
+                        </button>
+</div>
+</div>
+<!-- Create Account Link -->
+<div class="mt-xl text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        New to CollabHub? 
+                        <a class="font-label text-label text-primary font-bold hover:underline ml-xs" href="register.html">Create an account</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center gap-md max-w-[1200px] mx-auto border-t border-outline-variant bg-surface-container">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<span class="font-h6 text-h6 font-bold text-on-surface">CollabHub</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">© 2024 CollabHub. Skill-verified collaboration.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-lg">
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary transition-colors" href="#">About</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary transition-colors" href="#">Privacy</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary transition-colors" href="#">Terms</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary transition-colors" href="#">Support</a>
+</nav>
+</footer>
+<!-- Simple Interactivity for password visibility (Bonus) -->
+<script>
+        document.getElementById("login-form").addEventListener("submit", function(e) { e.preventDefault(); window.location.href = "dashboard.html"; });
+        document.addEventListener("DOMContentLoaded", () => {
+            // Simple visual feedback for interaction
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+                btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+                btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+            });
+        });
+    </script>
+</body></html>

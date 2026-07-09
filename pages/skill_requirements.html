@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Activity | CollabHub</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Space Grotesk & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#ffb393",
+                    "tertiary-container": "#8f3400",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#777586",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-dim": "#dcd8e4",
+                    "surface-container-high": "#eae6f3",
+                    "secondary-fixed-dim": "#ffb690",
+                    "primary": "#2a14b4",
+                    "tertiary-fixed-dim": "#ffb597",
+                    "background": "#fcf8ff",
+                    "on-surface": "#1b1b23",
+                    "inverse-on-surface": "#f3effb",
+                    "inverse-surface": "#302f39",
+                    "inverse-primary": "#c3c0ff",
+                    "on-surface-variant": "#464554",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-primary-fixed-variant": "#372abf",
+                    "secondary-fixed": "#ffdbca",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#5148d7",
+                    "primary-fixed": "#e3dfff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#100069",
+                    "on-secondary-fixed": "#341100",
+                    "surface-container-low": "#f6f2fe",
+                    "on-primary-container": "#c1beff",
+                    "secondary": "#9d4300",
+                    "on-secondary-fixed-variant": "#783200",
+                    "tertiary": "#692400",
+                    "on-secondary-container": "#5c2400",
+                    "surface-container": "#f0ecf8",
+                    "primary-container": "#4338ca",
+                    "surface-bright": "#fcf8ff",
+                    "surface": "#fcf8ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-background": "#1b1b23",
+                    "outline-variant": "#c7c4d7",
+                    "surface-variant": "#e4e1ed",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e4e1ed",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#fd761a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "xxl": "48px"
+            },
+            "fontFamily": {
+                    "caption": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h5": ["Space Grotesk"],
+                    "h1": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "label": ["Inter"],
+                    "h2": ["Space Grotesk"],
+                    "h6": ["Space Grotesk"],
+                    "h4": ["Space Grotesk"],
+                    "h3": ["Space Grotesk"],
+                    "h1-mobile": ["Space Grotesk"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h5": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "h6": ["16px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h4": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h3": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h1-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-transition { transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; }
+        .skill-dot { width: 10px; height: 10px; border-radius: 50%; }
+        /* Tonal Layering Level 1 */
+        .card-level-1 {
+            background-color: white;
+            border: 1px solid #E2E8F0;
+        }
+        /* Active dot style */
+        .dot-active { background-color: #2a14b4; }
+        .dot-inactive { background-color: #e4e1ed; }
+        
+        body {
+            background-color: #F8FAFC;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-center h-16">
+<div class="w-full max-w-[1200px] px-gutter flex justify-between items-center">
+<div class="text-h4 font-h4 font-bold text-primary">CollabHub</div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="font-medium text-on-surface-variant hover:text-primary transition-colors" href="feed.html">Feed</a>
+<a class="font-medium text-on-surface-variant hover:text-primary transition-colors" href="dashboard.html">Dashboard</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold" href="create_activity.html">Create</a>
+</nav>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young university student wearing a tech-branded hoodie, set against a blurred academic background with warm, natural sunlight. The image is crisp, modern, and aligned with the high-contrast academic innovation aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLAnsTTvEybEj-rl5H-OjxERs0-5Y5DGthVDbOybNlIbZ0Bd1ZDx508jvPEPUcBZUXQx7JTD43nvfSkZBPysOOPbStvFzpQmKBGPjh3fPodRokksJubwNgwWnUZtXYwybjZ1uBfHYpLdkhuo47Hb2mCpiM9zP5i_DS7kPZnnIwKa9NLKddA0QtiZQaPPho-rb1c03O5SHLyhbJD6IqepN9_puX8dTtHZfG5nJWHrXvc-gK8lSY2IjNHA"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-xxl pb-xxl px-gutter max-w-[1200px] mx-auto mt-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left Side: Multi-step Form Content -->
+<div class="lg:col-span-7 space-y-lg">
+<div class="flex items-center gap-sm mb-md">
+<div class="flex gap-xs items-center" id="step-indicator">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div class="w-12 h-1 bg-surface-container-highest rounded">
+<div class="h-full bg-primary w-1/3 transition-all duration-300" id="progress-bar" style="width: 66.66%;"></div>
+</div>
+</div>
+<span class="font-label text-label text-on-surface-variant uppercase tracking-wider">Step <span id="current-step-num">2</span> of 3</span>
+</div>
+<div class="relative overflow-hidden min-h-[600px]" id="form-container">
+<!-- Step 1: Basic Info -->
+<section class="step-transition opacity-100 transform translate-x-0" id="step-1"><h1 class="font-h2 text-h2 text-on-surface mb-sm">Required Skills</h1><p class="font-body-md text-on-surface-variant mb-lg">Define exactly who you need. Be specific about skill levels to get better matches.</p><div class="space-y-md mb-lg"><div class="flex flex-col md:flex-row gap-md p-md bg-white border border-outline-variant rounded-lg items-center"><div class="flex-1 w-full"><select class="w-full px-md py-xs border border-outline-variant rounded-lg outline-none"><option>React</option></select></div><div class="flex items-center gap-sm"><span class="font-label text-label text-on-surface-variant">Min Level:</span><div class="flex gap-xs"><div class="w-3 h-3 rounded-full bg-primary"></div><div class="w-3 h-3 rounded-full bg-primary"></div><div class="w-3 h-3 rounded-full bg-primary"></div><div class="w-3 h-3 rounded-full bg-surface-container-highest"></div><div class="w-3 h-3 rounded-full bg-surface-container-highest"></div></div></div><button class="text-on-surface-variant hover:text-error p-xs rounded-full transition-colors"><span class="material-symbols-outlined text-sm">delete</span></button></div><div class="flex flex-col md:flex-row gap-md p-md bg-white border border-outline-variant rounded-lg items-center"><div class="flex-1 w-full"><select class="w-full px-md py-xs border border-outline-variant rounded-lg outline-none"><option>Node.js</option></select></div><div class="flex items-center gap-sm"><span class="font-label text-label text-on-surface-variant">Min Level:</span><div class="flex gap-xs"><div class="w-3 h-3 rounded-full bg-primary"></div><div class="w-3 h-3 rounded-full bg-primary"></div><div class="w-3 h-3 rounded-full bg-surface-container-highest"></div><div class="w-3 h-3 rounded-full bg-surface-container-highest"></div><div class="w-3 h-3 rounded-full bg-surface-container-highest"></div></div></div><button class="text-on-surface-variant hover:text-error p-xs rounded-full transition-colors"><span class="material-symbols-outlined text-sm">delete</span></button></div></div><button class="flex items-center gap-sm text-primary font-bold hover:underline border border-primary/20 px-md py-sm rounded-lg"><span class="material-symbols-outlined">add_circle</span>Add Another Skill</button><div class="mt-lg bg-primary/5 p-md rounded-lg border border-primary/10"><div class="flex gap-sm"><span class="material-symbols-outlined text-primary">info</span><p class="font-caption text-caption text-on-surface-variant"><strong>Match Score Tip:</strong> Adding specific skill levels helps our algorithm find the most eligible university collaborators for your project.</p></div></div></section>
+<!-- Step 2: Description (Hidden initially) -->
+<section class="step-transition hidden opacity-0 transform translate-x-12" id="step-2">
+<h1 class="font-h2 text-h2 text-on-surface mb-sm">Description</h1>
+<p class="font-body-md text-on-surface-variant mb-lg">Describe the goals, the technical stack, and what you're looking to achieve.</p>
+<div class="space-y-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label text-label block">Project Details &amp; Goals</label>
+<div class="border border-outline-variant rounded-lg overflow-hidden flex flex-col h-80">
+<div class="bg-surface-container flex gap-sm p-xs border-b border-outline-variant">
+<button class="p-xs hover:bg-surface-container-highest rounded"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="p-xs hover:bg-surface-container-highest rounded"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="p-xs hover:bg-surface-container-highest rounded"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+<button class="p-xs hover:bg-surface-container-highest rounded"><span class="material-symbols-outlined text-sm">link</span></button>
+</div>
+<textarea class="flex-1 p-md bg-white border-none outline-none focus:ring-0 resize-none font-body-md" id="input-description" placeholder="Write about your project's core mission..."></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: Required Skills (Hidden initially) -->
+<section class="step-transition hidden opacity-0 transform translate-x-12" id="step-3">
+<h1 class="font-h2 text-h2 text-on-surface mb-sm">Required Skills</h1>
+<p class="font-body-md text-on-surface-variant mb-lg">Define exactly who you need. Be specific about skill levels to get better matches.</p>
+<div class="space-y-sm mb-lg" id="skills-list">
+<!-- Dynamic skills added here -->
+</div>
+<button class="flex items-center gap-sm text-primary font-bold hover:underline" onclick="addSkillRow()">
+<span class="material-symbols-outlined">add_circle</span>
+                            Add Skill
+                        </button>
+</section>
+</div>
+<!-- Sticky Form Footer -->
+<div class="pt-lg border-t border-outline-variant flex justify-between items-center bg-background/80 backdrop-blur-sm">
+<button class="px-lg py-sm border border-primary text-primary font-bold rounded-lg hover:bg-primary/5 transition-all" id="btn-back">Back</button>
+<button class="px-xl py-sm bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container transition-transform active:scale-95 shadow-lg shadow-primary/20" id="btn-continue">Continue</button>
+</div>
+</div>
+<!-- Right Side: Live Preview Panel -->
+<div class="lg:col-span-5 relative">
+<div class="sticky top-24 space-y-md">
+<div class="flex items-center gap-xs text-on-surface-variant font-label text-label uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">visibility</span> Live Preview
+                    </div>
+<!-- Activity Card Preview -->
+<div class="card-level-1 p-lg rounded-xl shadow-sm hover:border-primary transition-colors group">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close-up profile photo of a project lead, smiling confidently with a bright, minimalist studio backdrop. Soft shadows and high-key lighting create a professional, trustworthy persona fitting for a collaborator hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlpPcY4YBgCQsdRuJhCNFW9bj19ybSsVOWO6cMLVhYa0YhmMn8wtAixLGL4nTl_xuaqESYmVjfj8nkfa1fb0rpRZPmd1CUILTg_TMLCT9CV-Qec_WNhd89Z9PbO9k4rukW4wKuyou50TNH0qz_pL9tmeyh38c6IVYRjtHykv5IEqeanUvmGw26AlYc_NbHPkkCz_T0vkilnfgm0gkqYiQmkHsQWrmil2wtttsrlKsEG2Ycn6z-0PIqMg"/>
+</div>
+<div>
+<h4 class="font-h5 text-h5 text-on-surface group-hover:text-primary transition-colors" id="preview-title">Blockchain for Supply Chain</h4>
+<p class="font-caption text-caption text-on-surface-variant" id="preview-meta">Posted by You • 2 mins ago</p>
+</div>
+</div>
+<span class="font-label text-label bg-primary/10 text-primary px-sm py-xs rounded" id="preview-category">PROJECT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 mb-md" id="preview-desc">
+                            Enter a description to see how it looks here. This area will show a snippet of your project goals...
+                        </p>
+<div class="flex flex-wrap gap-xs mb-lg" id="preview-skills"><div class="flex items-center gap-xs px-sm py-xs rounded-full font-label text-label bg-primary/20 text-primary"><span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>React L3</div><div class="flex items-center gap-xs px-sm py-xs rounded-full font-label text-label bg-primary/10 text-primary"><span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>Node.js L2</div></div>
+<div class="pt-md border-t border-outline-variant flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-md">group</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="preview-members">0/4 Members</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-md">timer</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium" id="preview-deadline">No deadline</span>
+</div>
+</div>
+</div>
+<!-- Info Tip -->
+<div class="bg-surface-container-low p-md rounded-lg border border-outline-variant/50">
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="font-caption text-caption text-on-surface-variant">
+<strong>Match Score Tip:</strong> Adding 3 or more skills with specific levels helps our algorithm find the most eligible university collaborators for your project.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container border-t border-outline-variant mt-xxl">
+<div class="w-full max-w-[1200px] py-xl px-gutter mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex flex-col gap-xs text-center md:text-left">
+<span class="font-h6 text-h6 font-bold text-on-surface">CollabHub</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 CollabHub. Skill-verified collaboration.</p>
+</div>
+<nav class="flex gap-lg">
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">About</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Privacy</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Terms</a>
+<a class="font-label text-label text-on-surface-variant hover:underline decoration-primary" href="#">Support</a>
+</nav>
+</div>
+</footer>
+<script>
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        const btnContinue = document.getElementById('btn-continue');
+        const btnBack = document.getElementById('btn-back');
+        const progressBar = document.getElementById('progress-bar');
+        const currentStepNum = document.getElementById('current-step-num');
+
+        // Form Inputs
+        const inputTitle = document.getElementById('input-title');
+        const inputCategory = document.getElementById('input-category');
+        const inputMode = document.getElementById('input-mode');
+        const inputMembers = document.getElementById('input-members');
+        const inputDeadline = document.getElementById('input-deadline');
+        const inputDescription = document.getElementById('input-description');
+
+        // Preview Elements
+        const previewTitle = document.getElementById('preview-title');
+        const previewCategory = document.getElementById('preview-category');
+        const previewDesc = document.getElementById('preview-desc');
+        const previewMembers = document.getElementById('preview-members');
+        const previewDeadline = document.getElementById('preview-deadline');
+        const previewSkills = document.getElementById('preview-skills');
+
+        // Real-time Update Logic
+        const updatePreview = () => {
+            previewTitle.innerText = inputTitle.value || "Untitled Project";
+            previewCategory.innerText = inputCategory.value.toUpperCase();
+            previewDesc.innerText = inputDescription.value || "Enter a description to see how it looks here. This area will show a snippet of your project goals...";
+            previewMembers.innerText = `0/${inputMembers.value || 0} Members`;
+            previewDeadline.innerText = inputDeadline.value ? `Deadline: ${inputDeadline.value}` : "No deadline set";
+        };
+
+        [inputTitle, inputCategory, inputMembers, inputDeadline, inputDescription].forEach(el => {
+            el.addEventListener('input', updatePreview);
+        });
+
+        // Navigation Logic
+        const navigateToStep = (step) => {
+            // Hide all steps
+            for (let i = 1; i <= totalSteps; i++) {
+                const el = document.getElementById(`step-${i}`);
+                el.classList.add('hidden', 'opacity-0', 'translate-x-12');
+                el.classList.remove('opacity-100', 'translate-x-0');
+            }
+
+            // Show current step
+            const currentEl = document.getElementById(`step-${step}`);
+            currentEl.classList.remove('hidden');
+            setTimeout(() => {
+                currentEl.classList.remove('opacity-0', 'translate-x-12');
+                currentEl.classList.add('opacity-100', 'translate-x-0');
+            }, 10);
+
+            // Update UI
+            currentStep = step;
+            currentStepNum.innerText = currentStep;
+            progressBar.style.width = `${(currentStep / totalSteps) * 100}%`;
+            
+            // Buttons
+            btnBack.classList.toggle('opacity-50', currentStep === 1);
+            btnBack.classList.toggle('cursor-not-allowed', currentStep === 1);
+            btnContinue.innerText = currentStep === totalSteps ? 'Post Activity' : 'Continue';
+        };
+
+        btnContinue.addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                navigateToStep(currentStep + 1);
+            } else {
+                window.location.href = 'dashboard.html';
+            }
+        });
+
+        btnBack.addEventListener('click', () => {
+            if (currentStep > 1) {
+                navigateToStep(currentStep - 1);
+            }
+        });
+
+        // Skills Builder Logic
+        const skillSuggestions = ["React", "Python", "UI Design", "Rust", "Solidity", "Machine Learning", "Figma", "Data Analysis", "Academic Writing"];
+        
+        function addSkillRow() {
+            const container = document.getElementById('skills-list');
+            const rowId = Date.now();
+            
+            const div = document.createElement('div');
+            div.className = "flex flex-col md:flex-row gap-md p-md bg-white border border-outline-variant rounded-lg items-center animate-in slide-in-from-left duration-200";
+            div.id = `skill-row-${rowId}`;
+            
+            div.innerHTML = `
+                <div class="flex-1 w-full">
+                    <select class="skill-select w-full px-md py-xs border border-outline-variant rounded-lg outline-none" onchange="updateSkillPreview()">
+                        <option value="">Select a skill...</option>
+                        ${skillSuggestions.map(s => `<option value="${s}">${s}</option>`).join('')}
+                    </select>
+                </div>
+                <div class="flex items-center gap-sm">
+                    <span class="font-label text-label text-on-surface-variant">Min Level:</span>
+                    <div class="flex gap-xs dot-selector" data-value="3">
+                        ${[1, 2, 3, 4, 5].map(i => `
+                            <div onclick="setDotLevel(this, ${i})" class="skill-dot cursor-pointer transition-all ${i <= 3 ? 'dot-active' : 'dot-inactive'}"></div>
+                        `).join('')}
+                    </div>
+                </div>
+                <button onclick="removeSkillRow(${rowId})" class="text-error hover:bg-error-container p-xs rounded-full transition-colors">
+                    <span class="material-symbols-outlined text-sm">delete</span>
+                </button>
+            `;
+            
+            container.appendChild(div);
+            updateSkillPreview();
+        }
+
+        window.setDotLevel = (el, level) => {
+            const parent = el.closest('.dot-selector');
+            parent.setAttribute('data-value', level);
+            const dots = parent.querySelectorAll('.skill-dot');
+            dots.forEach((dot, idx) => {
+                if (idx < level) {
+                    dot.classList.add('dot-active');
+                    dot.classList.remove('dot-inactive');
+                } else {
+                    dot.classList.add('dot-inactive');
+                    dot.classList.remove('dot-active');
+                }
+            });
+            updateSkillPreview();
+        };
+
+        window.removeSkillRow = (id) => {
+            document.getElementById(`skill-row-${id}`).remove();
+            updateSkillPreview();
+        };
+
+        window.updateSkillPreview = () => {
+            const rows = document.querySelectorAll('#skills-list > div');
+            previewSkills.innerHTML = '';
+            
+            rows.forEach(row => {
+                const skillName = row.querySelector('.skill-select').value;
+                const level = row.querySelector('.dot-selector').getAttribute('data-value');
+                
+                if (skillName) {
+                    const chip = document.createElement('div');
+                    // Color based on level intensity as per design system
+                    const opacities = ['10', '30', '50', '80', '100'];
+                    const textColor = level >= 4 ? 'text-white' : 'text-primary';
+                    const bgColor = `rgba(67, 56, 180, ${level / 5})`; // Approximation of primary with level-based opacity
+                    
+                    chip.className = `flex items-center gap-xs px-sm py-xs rounded-full font-label text-label`;
+                    chip.style.backgroundColor = level >= 4 ? 'var(--tw-color-primary)' : `rgba(42, 20, 180, 0.${level * 2})`;
+                    chip.style.color = level >= 4 ? '#ffffff' : 'var(--tw-color-primary)';
+                    
+                    chip.innerHTML = `
+                        <span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        ${skillName} L${level}
+                    `;
+                    previewSkills.appendChild(chip);
+                }
+            });
+        };
+
+        // Initialize first skill row
+        addSkillRow();
+    </script>
+</body></html>

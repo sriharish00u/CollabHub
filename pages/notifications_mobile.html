@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CollabHub | Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e4e1ed",
+                    "secondary": "#9d4300",
+                    "on-tertiary-fixed": "#360f00",
+                    "inverse-on-surface": "#f3effb",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "primary-fixed": "#e3dfff",
+                    "outline-variant": "#c7c4d7",
+                    "outline": "#777586",
+                    "primary": "#2a14b4",
+                    "on-background": "#1b1b23",
+                    "tertiary": "#692400",
+                    "on-secondary-container": "#5c2400",
+                    "on-primary-container": "#c1beff",
+                    "background": "#fcf8ff",
+                    "surface-container-high": "#eae6f3",
+                    "on-surface-variant": "#464554",
+                    "surface-variant": "#e4e1ed",
+                    "surface-tint": "#5148d7",
+                    "tertiary-container": "#8f3400",
+                    "surface": "#fcf8ff",
+                    "primary-container": "#4338ca",
+                    "on-surface": "#1b1b23",
+                    "on-primary-fixed-variant": "#372abf",
+                    "surface-dim": "#dcd8e4",
+                    "surface-bright": "#fcf8ff",
+                    "on-secondary-fixed-variant": "#783200",
+                    "inverse-surface": "#302f39",
+                    "secondary-container": "#fd761a",
+                    "on-primary-fixed": "#100069",
+                    "surface-container-low": "#f6f2fe",
+                    "surface-container": "#f0ecf8",
+                    "secondary-fixed": "#ffdbca",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#ffb690",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#c3c0ff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#ffb393",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb597",
+                    "on-secondary-fixed": "#341100"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "gutter": "24px",
+                    "xxl": "48px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h2": ["Space Grotesk"],
+                    "h3": ["Space Grotesk"],
+                    "h1": ["Space Grotesk"],
+                    "body-sm": ["Inter"],
+                    "caption": ["Inter"],
+                    "h4": ["Space Grotesk"],
+                    "body-lg": ["Inter"],
+                    "h6": ["Space Grotesk"],
+                    "h5": ["Space Grotesk"],
+                    "label": ["Inter"],
+                    "h1-mobile": ["Space Grotesk"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "h3": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "h4": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h6": ["16px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h5": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "label": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "h1-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf8ff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .notification-card {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .notification-card:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-surface z-50 flex justify-between items-center h-16 px-md w-full border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young academic researcher with a friendly expression. The background is a blurred university library setting with soft, warm lighting. The aesthetic is clean, professional, and high-trust, matching a modern educational collaboration platform with indigo and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM3HhOguf8mHoWBa-FFwu4QkZa6XACTY69cQIGZPenT9ewBGLdG-ptirL4TFYPGT_K1oCGjAoxedzJUjey4Epo8yv_wfSnO1JBojFkBDb3ZEinlI37aWCjBpBdKhkb1LoXmZjvB7wywC69ejmCIXcZvTrCvdufzpXz0iSPWaS3P6wahVIEdv_HKqvJ-BYzc-bR4kckClB0onBMpAZcZoB13UH9CdpYyNVyzDV0eCq7TrRBuVQcQMAYGg"/>
+</div>
+<span class="font-h4 text-h4 text-primary tracking-tight">CollabHub</span>
+</div>
+<div class="flex items-center">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-low transition-colors p-xs rounded-lg active:opacity-80">notifications</button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-md max-w-md mx-auto">
+<!-- Header Actions -->
+<div class="flex justify-between items-center mb-lg">
+<h1 class="font-h2 text-h1-mobile text-on-surface">Activity</h1>
+<button class="text-primary font-label text-label hover:underline active:opacity-70 transition-all">Mark all as read</button>
+</div>
+<!-- Section: Today -->
+<div class="space-y-md">
+<h2 class="font-h6 text-h6 text-on-surface-variant flex items-center gap-xs">
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+                Today
+            </h2>
+<!-- Smart Match Notification (Bento-style depth) -->
+<div class="notification-card bg-surface-container-low border border-primary p-md rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary-container opacity-10 rounded-full -mr-12 -mt-12"></div>
+<div class="flex gap-md relative z-10">
+<div class="flex-shrink-0 w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-label text-label text-secondary uppercase tracking-wider">Smart Match</span>
+<span class="font-caption text-caption text-on-surface-variant">2m ago</span>
+</div>
+<p class="font-h6 text-h6 leading-tight mb-xs">New 95% match found!</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your profile highly aligns with the "Medicine &amp; AI Research Lab" requirements.</p>
+<div class="mt-md flex gap-sm">
+<button class="bg-primary text-on-primary font-label text-label px-md py-xs rounded-lg hover:brightness-110 active:scale-95 transition-all">View Match</button>
+<button class="bg-surface-container-highest text-on-surface font-label text-label px-md py-xs rounded-lg active:scale-95 transition-all">Dismiss</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Team Update Notification -->
+<div class="notification-card bg-white border border-outline-variant p-md rounded-xl">
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-label text-label text-primary uppercase tracking-wider">Team Update</span>
+<span class="font-caption text-caption text-on-surface-variant">45m ago</span>
+</div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Neural Network Optimization</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">"Sarah updated the project roadmap and added a new milestone for the Q3 dataset."</p>
+</div>
+</div>
+</div>
+<!-- Application Status Notification -->
+<div class="notification-card bg-white border border-outline-variant p-md rounded-xl">
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-12 h-12 bg-tertiary-fixed rounded-xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-label text-label text-tertiary uppercase tracking-wider">Application</span>
+<span class="font-caption text-caption text-on-surface-variant">3h ago</span>
+</div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Shortlisted</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">You've been moved to the interview stage for "Blockchain Ethics Study". Congrats!</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Yesterday -->
+<div class="space-y-md mt-xl">
+<h2 class="font-h6 text-h6 text-on-surface-variant flex items-center gap-xs">
+<span class="w-1 h-4 bg-outline rounded-full"></span>
+                Yesterday
+            </h2>
+<!-- Simple Team Update -->
+<div class="notification-card bg-white/50 border border-outline-variant p-md rounded-xl opacity-80">
+<div class="flex gap-md">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-label text-label text-on-surface-variant uppercase tracking-wider">Message</span>
+<span class="font-caption text-caption text-on-surface-variant">1d ago</span>
+</div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">New chat message</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">From Dr. Aris: "Can we review the model parameters tomorrow?"</p>
+</div>
+</div>
+</div>
+<!-- Skill Verification Card -->
+<div class="bg-surface-container-highest border border-outline-variant p-md rounded-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-h6 text-h6">Skill Verified</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">1d ago</span>
+</div>
+<div class="mt-sm flex flex-wrap gap-xs">
+<span class="px-sm py-xs bg-primary/10 text-primary rounded-full text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> Python Optimization
+                    </span>
+<span class="px-sm py-xs bg-primary/10 text-primary rounded-full text-xs font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> Data Privacy
+                    </span>
+</div>
+</div>
+</div>
+<!-- Empty State Anchor (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-xxl text-center" id="empty-state">
+<span class="material-symbols-outlined text-outline text-6xl mb-md">notifications_off</span>
+<h3 class="font-h4 text-h4 text-on-surface">All caught up!</h3>
+<p class="text-on-surface-variant text-body-md mt-xs">Check back later for new team updates and smart matches.</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-sm pb-safe bg-surface-container border-t border-outline-variant rounded-t-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:text-primary transition-colors active:scale-95 duration-150" href="my_teams.html">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label text-label mt-1">Teams</span>
+</a>
+<!-- ACTIVE TAB: Activity -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-md py-xs active:scale-95 transition-transform duration-150" href="feed_mobile.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label text-label mt-1">Activity</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:text-primary transition-colors active:scale-95 duration-150" href="dashboard_mobile.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:text-primary transition-colors active:scale-95 duration-150" href="feed_mobile.html">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label text-label mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-md py-xs hover:text-primary transition-colors active:scale-95 duration-150" href="settings.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label text-label mt-1">Settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for clearing notifications
+        const markAllRead = document.querySelector('button.text-primary');
+        const cards = document.querySelectorAll('.notification-card');
+        
+        markAllRead.addEventListener('click', () => {
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0.5';
+                    card.classList.remove('bg-surface-container-low', 'border-primary');
+                    card.classList.add('bg-white/30');
+                    // Find and remove dot markers if they existed
+                    const dot = card.querySelector('.bg-secondary-container.opacity-10');
+                    if (dot) dot.remove();
+                }, index * 50);
+            });
+        });
+
+        // Add ripple effect simulation on card click
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const ripple = document.createElement('span');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                ripple.className = 'absolute w-4 h-4 bg-primary/10 rounded-full transform -translate-x-1/2 -translate-y-1/2 scale-0 animate-ping pointer-events-none';
+                
+                card.style.position = 'relative';
+                card.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
+</body></html>
