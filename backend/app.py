@@ -30,7 +30,7 @@ app = FastAPI(title="CollabHub API", version="0.1.0")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("collabhub")
 
-allowed_origins = [o.strip() for o in settings.FRONTEND_ORIGIN.split(",") if o.strip()]
+allowed_origins = [o.strip().rstrip("/") for o in settings.FRONTEND_ORIGIN.split(",") if o.strip()]
 logger.info(f"CORS allowed_origins: {allowed_origins}")
 
 app.add_middleware(
