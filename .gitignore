@@ -6,3 +6,4 @@ node_modules/
 .DS_Store
 assets/js/config.js
 code.md
+code.py
