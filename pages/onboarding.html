@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Complete Your Profile | CollabHub</title>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex items-center justify-center p-lg">
+<div class="w-full max-w-lg">
+<!-- Progress Bar -->
+<div class="mb-xl">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label text-label text-on-surface-variant">Step <span id="step-num">1</span> of 3</span>
+<span class="font-label text-label text-primary" id="step-label">Basic Info</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" id="progress-bar" style="width: 33%"></div>
+</div>
+</div>
+
+<!-- Step 1: Basic Info -->
+<div class="bg-surface border border-outline-variant rounded-xl p-xl" id="step-1">
+<h2 class="font-h3 text-h3 mb-lg">Tell us about yourself</h2>
+<div class="space-y-lg">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs" for="ob-name">Full Name</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" id="ob-name" placeholder="Your name" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs" for="ob-bio">Bio</label>
+<textarea class="w-full h-24 px-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all resize-none" id="ob-bio" placeholder="Tell others what you're working on..."></textarea>
+</div>
+</div>
+<div class="flex justify-end mt-xl">
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-label text-label hover:bg-primary/90 active:scale-95 transition-all" id="next-1">
+                    Next
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<!-- Step 2: Organization & Role -->
+<div class="bg-surface border border-outline-variant rounded-xl p-xl hidden" id="step-2">
+<h2 class="font-h3 text-h3 mb-lg">Where do you work or study?</h2>
+<div class="space-y-lg">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs" for="ob-college">Organization</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" id="ob-college" placeholder="Company, university, or independent" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs" for="ob-role">Role</label>
+<select class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all appearance-none cursor-pointer" id="ob-role">
+<option disabled selected value="">Select your role</option>
+<option value="student">Student</option>
+<option value="professional">Working Professional</option>
+<option value="faculty">Faculty / Researcher</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs" for="ob-dept">Department</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" id="ob-dept" placeholder="e.g. Computer Science" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs" for="ob-year">Year</label>
+<select class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all appearance-none cursor-pointer" id="ob-year">
+<option disabled selected value="">Select Year</option>
+<option value="1">1st Year</option>
+<option value="2">2nd Year</option>
+<option value="3">3rd Year</option>
+<option value="4">4th Year</option>
+<option value="5">Graduate</option>
+<option value="6">Post-Graduate</option>
+</select>
+</div>
+</div>
+</div>
+<div class="flex justify-between mt-xl">
+<button class="text-on-surface-variant px-xl py-md rounded-lg font-label text-label hover:bg-surface-container transition-all" id="back-2">
+                    Back
+</button>
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-label text-label hover:bg-primary/90 active:scale-95 transition-all" id="next-2">
+                    Next
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<!-- Step 3: Skills -->
+<div class="bg-surface border border-outline-variant rounded-xl p-xl hidden" id="step-3">
+<h2 class="font-h3 text-h3 mb-lg">Add your skills (optional)</h2>
+<p class="font-body-md text-on-surface-variant mb-lg">Select skills you want to showcase. You can add more later.</p>
+<div class="space-y-lg">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant ml-xs" for="ob-skill-search">Search Skills</label>
+<input class="w-full h-12 px-md bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md transition-all" id="ob-skill-search" placeholder="e.g. Python, React, Data Analysis" type="text"/>
+</div>
+<div class="flex flex-wrap gap-sm" id="selected-skills"></div>
+<div class="max-h-48 overflow-y-auto space-y-sm" id="skill-suggestions"></div>
+</div>
+<div class="flex justify-between mt-xl">
+<button class="text-on-surface-variant px-xl py-md rounded-lg font-label text-label hover:bg-surface-container transition-all" id="back-3">
+                    Back
+</button>
+<div class="flex gap-sm">
+<button class="text-on-surface-variant px-xl py-md rounded-lg font-label text-label hover:bg-surface-container transition-all" id="skip-3">
+                    Skip
+</button>
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-label text-label hover:bg-primary/90 active:scale-95 transition-all" id="finish-3">
+                    Finish
+                    <span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Success State (hidden) -->
+<div class="bg-surface border border-outline-variant rounded-xl p-xl text-center hidden" id="success-state">
+<span class="material-symbols-outlined text-primary text-[64px] mb-lg">celebration</span>
+<h2 class="font-h3 text-h3 mb-md">You're all set!</h2>
+<p class="font-body-md text-on-surface-variant mb-xl">Your profile is ready. Let's find your next collaboration.</p>
+<a href="feed.html" class="inline-flex items-center gap-sm bg-primary text-on-primary px-xl py-md rounded-lg font-label text-label hover:bg-primary/90 active:scale-95 transition-all">
+                Explore Projects
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+
+<div id="error-msg" class="hidden text-body-sm text-error mt-md"></div>
+</div>
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/api.js"></script>
+<script src="/assets/js/pages/onboarding.js"></script>
+</body></html>

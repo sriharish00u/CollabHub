@@ -1,13 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CollabHub</title>
-<meta content="0; url=pages/dev_index.html" http-equiv="refresh"/>
-<script>window.location.href = 'pages/dev_index.html';</script>
+<title>CollabHub — Collaborative Project Network</title>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
 </head>
-<body>
-<a href="pages/dev_index.html">CollabHub</a>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+<!-- Minimal Nav -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+  <div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter h-16">
+    <div class="flex items-center gap-sm">
+      <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">hub</span>
+      </div>
+      <span class="font-h4 text-h4 font-bold text-primary">CollabHub</span>
+    </div>
+    <div class="flex items-center gap-md">
+      <a href="/pages/login.html" class="px-lg py-sm font-label text-label text-on-surface-variant hover:text-primary transition-colors">Log In</a>
+      <a href="/pages/register.html" class="bg-primary text-on-primary px-lg py-sm rounded-xl font-label text-label hover:bg-primary-container hover:text-on-primary-container transition-all">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="pt-32 pb-24 px-gutter max-w-[1200px] mx-auto text-center">
+  <div class="max-w-3xl mx-auto">
+    <span class="inline-flex items-center gap-xs px-md py-xs bg-primary-container/30 text-on-primary-container rounded-full font-label text-label mb-lg">
+      <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+      Open-source collaboration platform
+    </span>
+    <h1 class="font-h1 text-h1 leading-tight mb-lg">
+      Find the right collaborators for your next project
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-2xl mx-auto">
+      Post projects, match with skilled collaborators, and build together. CollabHub pairs you with the right people based on verified skills and availability.
+    </p>
+    <div class="flex flex-wrap justify-center gap-md">
+      <a href="/pages/register.html" class="bg-primary text-on-primary px-xl py-md rounded-xl font-h6 text-h6 hover:bg-primary-container hover:text-on-primary-container transition-all scale-95 active:scale-90">
+        Get Started Free
+      </a>
+      <a href="/pages/login.html" class="border border-outline-variant text-on-surface px-xl py-md rounded-xl font-h6 text-h6 hover:bg-surface-container transition-all scale-95 active:scale-90">
+        Log In
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="py-24 px-gutter max-w-[1200px] mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+    <div class="bg-surface border border-outline-variant rounded-2xl p-xl hover:shadow-lg hover:border-primary/30 transition-all">
+      <div class="w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center mb-lg">
+        <span class="material-symbols-outlined text-on-primary-container">rocket_launch</span>
+      </div>
+      <h3 class="font-h5 text-h5 mb-sm">Create Projects</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant">Describe your project, set required skills and deadlines, and let CollabHub find the best matches.</p>
+    </div>
+    <div class="bg-surface border border-outline-variant rounded-2xl p-xl hover:shadow-lg hover:border-primary/30 transition-all">
+      <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-lg">
+        <span class="material-symbols-outlined text-on-secondary-container">person_search</span>
+      </div>
+      <h3 class="font-h5 text-h5 mb-sm">Smart Matching</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant">Skill-based eligibility scoring ranks applicants so creators can make informed decisions quickly.</p>
+    </div>
+    <div class="bg-surface border border-outline-variant rounded-2xl p-xl hover:shadow-lg hover:border-primary/30 transition-all">
+      <div class="w-12 h-12 bg-tertiary-container rounded-xl flex items-center justify-center mb-lg">
+        <span class="material-symbols-outlined text-on-tertiary-container">forum</span>
+      </div>
+      <h3 class="font-h5 text-h5 mb-sm">Team Chat</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant">Every accepted project gets a dedicated group chat so teams can coordinate from day one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-outline-variant py-xl px-gutter">
+  <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+    <div class="flex items-center gap-sm">
+      <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">hub</span>
+      <span class="font-label text-label text-on-surface-variant">CollabHub</span>
+    </div>
+    <p class="font-caption text-caption text-on-surface-variant">&copy; 2025 CollabHub. Built for collaboration.</p>
+  </div>
+</footer>
+
 </body>
 </html>

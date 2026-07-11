@@ -1,184 +1,13 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CollabHub | Notifications</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "error": "#ba1a1a",
-                        "tertiary": "#692400",
-                        "on-surface": "#1b1b23",
-                        "inverse-on-surface": "#f3effb",
-                        "secondary-fixed-dim": "#ffb690",
-                        "on-error": "#ffffff",
-                        "secondary": "#9d4300",
-                        "on-surface-variant": "#464554",
-                        "surface-bright": "#fcf8ff",
-                        "surface": "#fcf8ff",
-                        "primary-fixed": "#e3dfff",
-                        "on-background": "#1b1b23",
-                        "background": "#fcf8ff",
-                        "on-primary-fixed-variant": "#372abf",
-                        "surface-container-highest": "#e4e1ed",
-                        "surface-container": "#f0ecf8",
-                        "tertiary-fixed-dim": "#ffb597",
-                        "on-error-container": "#93000a",
-                        "surface-container-high": "#eae6f3",
-                        "outline-variant": "#c7c4d7",
-                        "on-primary": "#ffffff",
-                        "on-secondary-fixed-variant": "#783200",
-                        "surface-container-low": "#f6f2fe",
-                        "primary-container": "#4338ca",
-                        "on-tertiary-fixed": "#360f00",
-                        "on-secondary": "#ffffff",
-                        "on-primary-container": "#c1beff",
-                        "error-container": "#ffdad6",
-                        "inverse-surface": "#302f39",
-                        "tertiary-fixed": "#ffdbcd",
-                        "primary-fixed-dim": "#c3c0ff",
-                        "surface-tint": "#5148d7",
-                        "surface-container-lowest": "#ffffff",
-                        "on-tertiary-fixed-variant": "#7d2d00",
-                        "on-tertiary": "#ffffff",
-                        "outline": "#777586",
-                        "on-primary-fixed": "#100069",
-                        "surface-dim": "#dcd8e4",
-                        "secondary-fixed": "#ffdbca",
-                        "surface-variant": "#e4e1ed",
-                        "on-secondary-container": "#5c2400",
-                        "secondary-container": "#fd761a",
-                        "on-secondary-fixed": "#341100",
-                        "on-tertiary-container": "#ffb393",
-                        "inverse-primary": "#c3c0ff",
-                        "tertiary-container": "#8f3400",
-                        "primary": "#2a14b4"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "sm": "8px",
-                        "xl": "32px",
-                        "xs": "4px",
-                        "gutter": "24px",
-                        "md": "16px",
-                        "xxl": "48px",
-                        "lg": "24px"
-                    },
-                    "fontFamily": {
-                        "h5": ["Space Grotesk"],
-                        "h2": ["Space Grotesk"],
-                        "caption": ["Inter"],
-                        "h1-mobile": ["Space Grotesk"],
-                        "h4": ["Space Grotesk"],
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "label": ["Inter"],
-                        "h1": ["Space Grotesk"],
-                        "h6": ["Space Grotesk"],
-                        "h3": ["Space Grotesk"],
-                        "body-sm": ["Inter"]
-                    },
-                    "fontSize": {
-                        "h5": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                        "h2": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
-                        "h1-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "h4": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
-                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "h6": ["16px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "h3": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
-        .font-h1, .font-h2, .font-h3, .font-h4, .font-h5, .font-h6 { font-family: 'Space Grotesk', sans-serif; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .skill-chip-1 { background-color: rgba(42, 20, 180, 0.1); color: #2a14b4; }
-        .skill-chip-5 { background-color: #2a14b4; color: #ffffff; }
-        .glass-panel { backdrop-filter: blur(8px); background-color: rgba(255, 255, 255, 0.8); }
-    </style>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
 </head>
 <body class="bg-background text-on-surface overflow-hidden">
-<!-- Global Layout Shell -->
-<div class="flex h-screen w-full">
-<!-- SideNavBar (Predicted) -->
-<aside class="h-screen w-64 fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-lg px-md z-10">
-<div class="flex items-center gap-sm mb-xxl">
-<span class="material-symbols-outlined text-primary text-h4" data-icon="hub">hub</span>
-<span class="font-h4 text-h4 font-bold text-primary">CollabHub</span>
-</div>
-<nav class="flex-1 space-y-xs">
-<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="group_chat.html">
-<span class="material-symbols-outlined" data-icon="group">group</span>
-<span class="font-body-md text-body-md">My Teams</span>
-</a>
-<a class="flex items-center gap-md p-md rounded-lg text-primary font-bold border-r-4 border-primary bg-surface-container-high" href="feed.html">
-<span class="material-symbols-outlined" data-icon="explore">explore</span>
-<span class="font-body-md text-body-md">Activities</span>
-</a>
-<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="feed_mobile.html">
-<span class="material-symbols-outlined" data-icon="search">search</span>
-<span class="font-body-md text-body-md">Discover</span>
-</a>
-<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="library_books">library_books</span>
-<span class="font-body-md text-body-md">Resources</span>
-</a>
-<a class="flex items-center gap-md p-md rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="settings.html">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="font-body-md text-body-md">Settings</span>
-</a>
-</nav>
-<div class="mt-auto pt-lg border-t border-outline-variant">
-<a href="create_activity.html" class="w-full bg-primary text-on-primary py-md px-lg rounded font-body-md font-bold flex items-center justify-center gap-sm transition-all active:scale-95">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-                    New Collaboration
-                </a>
-</div>
-</aside>
 <!-- Main Content Area -->
-<main class="flex-1 ml-64 min-h-screen relative">
-<!-- TopAppBar (Predicted) -->
-<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-xl z-20">
-<div class="flex items-center gap-xl">
-<h2 class="font-h5 text-h5 font-bold text-primary">Dashboard</h2>
-<nav class="hidden md:flex gap-lg">
-<a class="font-label text-label text-on-surface-variant hover:text-primary transition-all" href="dashboard.html">Dashboard</a>
-<a class="font-label text-label text-on-surface-variant hover:text-primary transition-all" href="group_chat.html">Messages</a>
-<a class="font-label text-label text-on-surface-variant hover:text-primary transition-all" href="analytics.html">Analytics</a>
-</nav>
-</div>
-<div class="flex items-center gap-lg">
-<div class="relative group">
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-sm rounded-full hover:bg-surface-container-high" data-icon="notifications">notifications</span>
-<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-secondary rounded-full border-2 border-surface"></span>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-sm rounded-full hover:bg-surface-container-high" data-icon="help_outline">help_outline</span>
-<a href="profile.html" class="w-8 h-8 rounded-full overflow-hidden border border-outline cursor-pointer">
-<img class="w-full h-full object-cover" data-alt="A professional headshot of a young academic researcher in a bright, modern studio setting with soft indigo lighting in the background. The person is smiling confidently, wearing a smart-casual blazer, representing professional credibility and innovation in a tech-forward educational environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYHK7S4CxePyJmowVYFELbrxUrTJGxrNe4IJCb4LTDodhVLar4MXTh5EFtyNwkv6F4kh30dZErvvqQHKw95K1hDYmxvJioc9kfz7yLGZR0SuHoQW_LqDGWUxM77A6gfbEVECDt-l0TF77mBLm0U3Om5YIY31pXqfbERaL9X9yWlkXxOSxgtb55RRY5gAT9RP6We47w7OAT-kaElEoFmI294hMO_Etm5fbuIFKnaBdcBbp7nLA9lyzKfA"/>
-</div>
-</div>
-</header>
+<main class="min-h-screen relative">
 <!-- Background Content: Activity Feed (Blurred) -->
 <div class="pt-24 px-xl pb-xl filter blur-sm transition-all duration-500 opacity-60">
 <div class="grid grid-cols-12 gap-gutter max-w-[1200px] mx-auto">
@@ -228,7 +57,7 @@
 </div>
 <span class="bg-primary text-on-primary px-sm py-xs rounded text-label font-label">MATCHED</span>
 </div>
-<p class="font-body-md text-body-md mb-lg">A collaborative study on the impacts of multitasking on focus for university students...</p>
+<p class="font-body-md text-body-md mb-lg">A collaborative study on the impacts of multitasking on focus...</p>
 <div class="flex gap-sm">
 <span class="skill-chip-1 px-sm py-xs rounded-full font-label text-label">Psychology</span>
 <span class="skill-chip-1 px-sm py-xs rounded-full font-label text-label">Data Analysis</span>
@@ -263,7 +92,7 @@
 <div class="flex items-center justify-between p-lg border-b border-outline-variant">
 <div>
 <h3 class="font-h5 text-h5 text-primary">Notifications</h3>
-<p class="font-caption text-caption text-on-surface-variant">3 unread updates today</p>
+<p class="font-caption text-caption text-on-surface-variant" id="unread-count">Loading...</p>
 </div>
 <div class="flex gap-sm">
 <button class="p-xs hover:bg-surface-container-high rounded text-on-surface-variant" title="Settings">
@@ -280,70 +109,10 @@
 <section class="py-md">
 <div class="px-lg pb-sm flex justify-between items-center">
 <span class="font-label text-label text-on-surface-variant tracking-wider uppercase">New Activity</span>
-<button class="text-primary font-label text-label hover:underline">Mark all as read</button>
+<button class="text-primary font-label text-label hover:underline" id="mark-all-read">Mark all as read</button>
 </div>
-<div class="divide-y divide-outline-variant/50">
-<!-- Application Notification -->
-<div class="px-lg py-md flex gap-md hover:bg-primary/5 cursor-pointer group relative">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-primary rounded-r-full"></div>
-<div class="relative">
-<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
-<img class="w-full h-full object-cover" data-alt="A portrait of Alex Rivera, a young software engineer with a modern, technical look. Warm studio lighting and a clean indigo-tinted background reflect academic rigor and professional innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ6mcU3iTggCqRL2LqZtgI94BnnkJM25bUoTd9XbPPLIdToRqj42-A7h7L1DDJ-qX1x2dBwumOM4dP4O_fL6txbKW6i9HwntyyaYvg5pWi1L07xiQxADSIZD7IkoO6GXNUAI_JEqhvn25owsv2uVDff9yyjKm_if6egwvXhGp6pvnbWl5d8O8LmnRNsBgSumzm7rEibKVDBi33AerwFkYj8RxcHSwYnFu5lRo3caDPz7ozOBU3Qnu5Ew"/>
-</div>
-<div class="absolute -bottom-1 -right-1 w-6 h-6 bg-secondary text-on-primary rounded-full flex items-center justify-center border-2 border-surface">
-<span class="material-symbols-outlined text-[14px]" data-icon="person_add" style="font-variation-settings: 'FILL' 1;">person_add</span>
-</div>
-</div>
-<div class="flex-1">
-<p class="font-body-sm text-body-sm text-on-surface leading-snug">
-<span class="font-bold">Alex Rivera</span> applied to your project <span class="text-primary font-medium">AI Medical Assistant</span>
-</p>
-<p class="font-caption text-caption text-on-surface-variant mt-1 flex items-center gap-xs">
-<span class="material-symbols-outlined text-[12px]" data-icon="schedule">schedule</span> 2 mins ago
-                                        </p>
-</div>
-<div class="w-2 h-2 rounded-full bg-secondary self-center"></div>
-</div>
-<!-- Endorsement Notification -->
-<div class="px-lg py-md flex gap-md hover:bg-primary/5 cursor-pointer group relative">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-primary rounded-r-full"></div>
-<div class="relative">
-<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
-<img class="w-full h-full object-cover" data-alt="A headshot of Jordan Smyth, a distinguished senior academic with grey hair and glasses, set against a dark indigo scholarly background. The lighting is focused and professional, suggesting intellectual authority and skill endorsement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLaKiEDFx0B4PLvaUws2HPnQSYMyU0Ia-Y5xcCQceznm4d6iE616ckcaM1YYrj8EpKAJBsPObY_5uxyBOIt74erpy3QIwh-xbq2RFHR8VRK4_0MiCKNcKcxl4Ffu34k1L_fAexRJcITG7UznvwqPCmBuNMHoztuWB3vTHm-TOsBW2aRM0GkIQ8-uqcyt-A_XXeM96XoYZji06jOMfJdB1yhQF7Er6shhItjz4Ux_KWnDWDJN2x0310NA"/>
-</div>
-<div class="absolute -bottom-1 -right-1 w-6 h-6 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center border-2 border-surface">
-<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-</div>
-<div class="flex-1">
-<p class="font-body-sm text-body-sm text-on-surface leading-snug">
-<span class="font-bold">Jordan Smyth</span> endorsed your <span class="font-medium">Python</span> skill
-                                        </p>
-<p class="font-caption text-caption text-on-surface-variant mt-1 flex items-center gap-xs">
-<span class="material-symbols-outlined text-[12px]" data-icon="schedule">schedule</span> 45 mins ago
-                                        </p>
-</div>
-<div class="w-2 h-2 rounded-full bg-secondary self-center"></div>
-</div>
-<!-- Message Notification -->
-<div class="px-lg py-md flex gap-md hover:bg-surface-container-high cursor-pointer opacity-70">
-<div class="relative">
-<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
-<img class="w-full h-full object-cover" data-alt="A profile photo of a diverse graduate student in a library setting with soft, warm, blurred books in the background. The aesthetic is academic, collaborative, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfdPsld60QhZpEhRF9MG0nsBiDEw85iaONKp4MhqvsAKlEzQL_TSF5sMSwsEw1Z-CrE1qsHu0HSJ2YTxnaovvQsuPB4ut8XbpaQ5GSS8A3vhLJbzRBMOWSaP3XlxxsFslu8IXZ7L7rNC3i7gIqo0J-lZpQIkCofRV6-a8TmCptqv9wn2GzHz7A3Bj7jwUmC5ANHyyTnqvLWXOnuqAfcIccimmXcNRRRPSlbhVlZONOkGm3dZ5ZNpRP-g"/>
-</div>
-<div class="absolute -bottom-1 -right-1 w-6 h-6 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center border-2 border-surface">
-<span class="material-symbols-outlined text-[14px]" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
-</div>
-</div>
-<div class="flex-1">
-<p class="font-body-sm text-body-sm text-on-surface leading-snug">
-<span class="font-bold">Lana Vouis</span> sent you a message: "Hey Aris, do you have time to..."
-                                        </p>
-<p class="font-caption text-caption text-on-surface-variant mt-1 flex items-center gap-xs">
-<span class="material-symbols-outlined text-[12px]" data-icon="schedule">schedule</span> 3 hours ago
-                                        </p>
-</div>
-</div>
+<div class="divide-y divide-outline-variant/50" id="activity-notifications">
+<p class="px-lg py-md font-body-sm text-body-sm text-on-surface-variant">Loading notifications...</p>
 </div>
 </section>
 <!-- System Section -->
@@ -351,43 +120,15 @@
 <div class="px-lg pb-sm">
 <span class="font-label text-label text-on-surface-variant tracking-wider uppercase">System Updates</span>
 </div>
-<div class="divide-y divide-outline-variant/50">
-<div class="px-lg py-md flex gap-md hover:bg-primary/5 cursor-pointer group relative">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-primary rounded-r-full"></div>
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center border border-primary-fixed-dim">
-<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
-</div>
-<div class="flex-1">
-<p class="font-body-sm text-body-sm text-on-surface leading-snug">
-                                            Your project <span class="font-bold">"Neural Net Optimization"</span> was featured in the global Feed!
-                                        </p>
-<p class="font-caption text-caption text-on-surface-variant mt-1 flex items-center gap-xs">
-<span class="material-symbols-outlined text-[12px]" data-icon="schedule">schedule</span> 5 hours ago
-                                        </p>
-</div>
-<div class="w-2 h-2 rounded-full bg-secondary self-center"></div>
-</div>
-<div class="px-lg py-md flex gap-md hover:bg-surface-container-high cursor-pointer opacity-70">
-<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant">
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="security">security</span>
-</div>
-<div class="flex-1">
-<p class="font-body-sm text-body-sm text-on-surface leading-snug">
-                                            Security alert: A new login was detected from <span class="font-bold">San Francisco, CA</span>
-</p>
-<p class="font-caption text-caption text-on-surface-variant mt-1 flex items-center gap-xs">
-<span class="material-symbols-outlined text-[12px]" data-icon="schedule">schedule</span> Yesterday
-                                        </p>
-</div>
-</div>
+<div class="divide-y divide-outline-variant/50" id="system-notifications">
 </div>
 </section>
 </div>
 <!-- Panel Footer -->
 <div class="p-lg bg-surface border-t border-outline-variant">
-<button class="w-full bg-primary text-on-primary py-md px-lg rounded font-body-md font-bold flex items-center justify-center gap-sm transition-all hover:bg-primary/90 active:scale-95 shadow-sm">
-                            View all notifications
-                            <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+<button class="w-full bg-primary text-on-primary py-md px-lg rounded font-body-md font-bold flex items-center justify-center gap-sm transition-all hover:bg-primary/90 active:scale-95 shadow-sm" onclick="document.getElementById('notifications-panel').style.display='none'">
+                            Close Notifications
+                            <span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
 </button>
 </div>
 </div>
@@ -397,25 +138,8 @@
 <span class="material-symbols-outlined text-[28px]" data-icon="magic_button">magic_button</span>
 </button>
 </main>
-</div>
-<script>
-        // Micro-interaction: Close panel on Esc key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                document.getElementById('notifications-panel').style.display = 'none';
-            }
-        });
-
-        // Simulating mark read
-        const notificationItems = document.querySelectorAll('.divide-y > div');
-        notificationItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const unreadIndicator = this.querySelector('.bg-secondary');
-                const accentBar = this.querySelector('.bg-primary');
-                if (unreadIndicator) unreadIndicator.style.display = 'none';
-                if (accentBar) accentBar.style.display = 'none';
-                this.classList.add('opacity-70');
-            });
-        });
-    </script>
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/api.js"></script>
+<script src="/assets/js/components/sidebar.js"></script>
+<script src="/assets/js/pages/notifications.js"></script>
 </body></html>

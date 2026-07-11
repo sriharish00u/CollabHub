@@ -4,60 +4,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CollabHub — Dev Index</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "primary": "#2a14b4",
-        "primary-container": "#4338ca",
-        "on-primary": "#ffffff",
-        "on-primary-container": "#eaddff",
-        "secondary": "#605d72",
-        "surface": "#fcf8ff",
-        "surface-dim": "#dcd8e4",
-        "surface-container-low": "#f6f2fe",
-        "surface-container-highest": "#e6e2ee",
-        "surface-variant": "#e7e0ec",
-        "on-surface": "#1b1b23",
-        "on-surface-variant": "#464554",
-        "outline-variant": "#c7c4d7",
-        "outline": "#79747e",
-        "inverse-surface": "#302f39",
-        "inverse-primary": "#c3c0ff",
-        "background": "#fcf8ff"
-      },
-      fontFamily: {
-        heading: ['"Space Grotesk"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
-      },
-      spacing: {
-        'xs': '4px',
-        'sm': '8px',
-        'md': '16px',
-        'lg': '24px',
-        'xl': '32px',
-        '2xl': '48px',
-      }
-    }
-  }
-};
-</script>
-<style>
-  body { font-family: 'Inter', sans-serif; }
-  .font-heading { font-family: 'Space Grotesk', sans-serif; }
-</style>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
 </head>
 <body class="bg-background text-on-surface">
 <div class="max-w-5xl mx-auto px-md py-xl">
   <header class="mb-xl">
     <div class="flex items-center gap-md mb-sm">
       <span class="material-symbols-outlined text-primary text-3xl">code</span>
-      <h1 class="font-heading text-3xl font-bold text-primary">CollabHub Dev Index</h1>
+      <h1 class="font-h5 text-3xl font-bold text-primary">CollabHub Dev Index</h1>
     </div>
     <p class="text-on-surface-variant text-lg">All screens in the project — use this page to quickly navigate between views during development.</p>
     <div class="flex gap-sm mt-md text-sm">
@@ -68,14 +22,14 @@ tailwind.config = {
 
   <!-- Auth -->
   <section class="mb-xl">
-    <h2 class="font-heading text-xl font-semibold mb-md flex items-center gap-sm">
+    <h2 class="font-h5 text-xl font-semibold mb-md flex items-center gap-sm">
       <span class="material-symbols-outlined text-primary">lock</span> Authentication
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
       <a href="login.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Login</h3>
+            <h3 class="font-h5 font-semibold text-lg">Login</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Sign-in page with email/password fields, social login options, and link to registration.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -84,7 +38,7 @@ tailwind.config = {
       <a href="register.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Register</h3>
+            <h3 class="font-h5 font-semibold text-lg">Register</h3>
             <p class="text-sm text-on-surface-variant mt-xs">New user registration with name, email, password fields and role selection.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -95,14 +49,14 @@ tailwind.config = {
 
   <!-- Dashboard -->
   <section class="mb-xl">
-    <h2 class="font-heading text-xl font-semibold mb-md flex items-center gap-sm">
+    <h2 class="font-h5 text-xl font-semibold mb-md flex items-center gap-sm">
       <span class="material-symbols-outlined text-primary">dashboard</span> Dashboard
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
       <a href="dashboard.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Main Dashboard</h3>
+            <h3 class="font-h5 font-semibold text-lg">Main Dashboard</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Desktop dashboard with sidebar navigation, activity feed, upcoming deadlines, and skill overview cards.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -111,7 +65,7 @@ tailwind.config = {
       <a href="dashboard_mobile.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Dashboard (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">Dashboard (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Mobile-optimized dashboard with bottom nav bar, project stats, and quick actions.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -120,7 +74,7 @@ tailwind.config = {
       <a href="analytics.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Analytics Dashboard (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">Analytics Dashboard (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Analytics view with charts, skill metrics, project progress bars, and completion stats.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -129,7 +83,7 @@ tailwind.config = {
       <a href="notifications.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Notifications</h3>
+            <h3 class="font-h5 font-semibold text-lg">Notifications</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Desktop notifications panel with sidebar, organized by updates, messages, and alerts.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -138,7 +92,7 @@ tailwind.config = {
       <a href="notifications_mobile.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Notifications (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">Notifications (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Mobile-optimized notification list with bottom nav, grouped by type.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -149,14 +103,14 @@ tailwind.config = {
 
   <!-- Activities / Feed -->
   <section class="mb-xl">
-    <h2 class="font-heading text-xl font-semibold mb-md flex items-center gap-sm">
+    <h2 class="font-h5 text-xl font-semibold mb-md flex items-center gap-sm">
       <span class="material-symbols-outlined text-primary">rss_feed</span> Activities &amp; Feed
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
       <a href="feed.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Activity Feed</h3>
+            <h3 class="font-h5 font-semibold text-lg">Activity Feed</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Desktop activity feed with filter/search tabs. Lists projects with descriptions, skills, and apply buttons.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -165,7 +119,7 @@ tailwind.config = {
       <a href="feed_mobile.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Activity Feed (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">Activity Feed (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Mobile discovery/feed view with bottom nav, search, and project cards.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -174,7 +128,7 @@ tailwind.config = {
       <a href="activity_detail.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Activity Detail</h3>
+            <h3 class="font-h5 font-semibold text-lg">Activity Detail</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Detailed project view with description, required skills, team members, and Apply Now / Verify buttons.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -183,7 +137,7 @@ tailwind.config = {
       <a href="create_activity.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Create Activity</h3>
+            <h3 class="font-h5 font-semibold text-lg">Create Activity</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Form to create a new project/activity with title, description, skills, and team size fields.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -192,7 +146,7 @@ tailwind.config = {
       <a href="skill_requirements.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Create Activity — Skill Requirements</h3>
+            <h3 class="font-h5 font-semibold text-lg">Create Activity — Skill Requirements</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Step 2 of activity creation. Configure required skills, levels, and minimum scores for applicants.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -201,7 +155,7 @@ tailwind.config = {
       <a href="submission_success.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Submission Successful</h3>
+            <h3 class="font-h5 font-semibold text-lg">Submission Successful</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Post-application success page with next steps: verify skills, view profile, or browse projects.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -212,14 +166,14 @@ tailwind.config = {
 
   <!-- Applications -->
   <section class="mb-xl">
-    <h2 class="font-heading text-xl font-semibold mb-md flex items-center gap-sm">
+    <h2 class="font-h5 text-xl font-semibold mb-md flex items-center gap-sm">
       <span class="material-symbols-outlined text-primary">description</span> Applications
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
       <a href="application_form.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Application Form (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">Application Form (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Project application form with personal info, cover letter, and skill endorsements.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -228,7 +182,7 @@ tailwind.config = {
       <a href="applicant_review.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Applicant Review</h3>
+            <h3 class="font-h5 font-semibold text-lg">Applicant Review</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Desktop view for project owners to review applicants, compare skills, approve or reject.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -237,7 +191,7 @@ tailwind.config = {
       <a href="applicant_review_mobile.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Applicant Review (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">Applicant Review (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Mobile-optimized applicant review with accept/reject actions per candidate.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -248,14 +202,14 @@ tailwind.config = {
 
   <!-- Skill Verification -->
   <section class="mb-xl">
-    <h2 class="font-heading text-xl font-semibold mb-md flex items-center gap-sm">
+    <h2 class="font-h5 text-xl font-semibold mb-md flex items-center gap-sm">
       <span class="material-symbols-outlined text-primary">verified</span> Skill Verification
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
       <a href="skill_verification.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Verify Skills — Selection</h3>
+            <h3 class="font-h5 font-semibold text-lg">Verify Skills — Selection</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Choose a skill to verify from your profile. Shows skill levels, progress rings, and verification readiness.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -264,7 +218,7 @@ tailwind.config = {
       <a href="verify_method.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Verification Method</h3>
+            <h3 class="font-h5 font-semibold text-lg">Verification Method</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Choose how to verify: online quiz, hands-on challenge, or portfolio review. Shows difficulty and time estimates.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -275,14 +229,14 @@ tailwind.config = {
 
   <!-- Projects & Teams -->
   <section class="mb-xl">
-    <h2 class="font-heading text-xl font-semibold mb-md flex items-center gap-sm">
+    <h2 class="font-h5 text-xl font-semibold mb-md flex items-center gap-sm">
       <span class="material-symbols-outlined text-primary">groups</span> Projects &amp; Teams
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
       <a href="my_teams.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">My Teams (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">My Teams (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Mobile view of teams you belong to, with project cards, member avatars, and quick stats.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -291,7 +245,7 @@ tailwind.config = {
       <a href="project_detail.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Project Detail (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">Project Detail (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Mobile project detail view with description, team members, skills, and progress tracking.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -300,7 +254,7 @@ tailwind.config = {
       <a href="group_chat.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Group Chat</h3>
+            <h3 class="font-h5 font-semibold text-lg">Group Chat</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Desktop team chat with sidebar, message threads, file sharing, and member list for a project.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -309,7 +263,7 @@ tailwind.config = {
       <a href="neural_chat.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Group Chat — Neural Networks</h3>
+            <h3 class="font-h5 font-semibold text-lg">Group Chat — Neural Networks</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Project-specific chat for the Neural Network Optimization research team.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -318,7 +272,7 @@ tailwind.config = {
       <a href="project_settings.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Project Settings — Neural Networks</h3>
+            <h3 class="font-h5 font-semibold text-lg">Project Settings — Neural Networks</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Project-specific settings page for the Neural Network Optimization project.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -329,14 +283,14 @@ tailwind.config = {
 
   <!-- Profile & Settings -->
   <section class="mb-xl">
-    <h2 class="font-heading text-xl font-semibold mb-md flex items-center gap-sm">
+    <h2 class="font-h5 text-xl font-semibold mb-md flex items-center gap-sm">
       <span class="material-symbols-outlined text-primary">account_circle</span> Profile &amp; Settings
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
       <a href="profile.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">User Profile</h3>
+            <h3 class="font-h5 font-semibold text-lg">User Profile</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Desktop profile page with avatar, bio, skill badges, project history, and activity stats.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -345,7 +299,7 @@ tailwind.config = {
       <a href="settings.html" class="block p-md bg-surface border border-outline-variant rounded-xl hover:border-primary hover:shadow-md transition-all">
         <div class="flex items-start justify-between">
           <div>
-            <h3 class="font-heading font-semibold text-lg">Settings (Mobile)</h3>
+            <h3 class="font-h5 font-semibold text-lg">Settings (Mobile)</h3>
             <p class="text-sm text-on-surface-variant mt-xs">Account settings, notifications preferences, privacy controls, theme toggle, and logout.</p>
           </div>
           <span class="material-symbols-outlined text-outline">arrow_forward</span>
@@ -358,5 +312,8 @@ tailwind.config = {
     <p>CollabHub Dev Index &mdash; <span id="page-count">25</span> screens</p>
   </footer>
 </div>
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/api.js"></script>
+<script src="/assets/js/pages/dev_index.js"></script>
 </body>
 </html>

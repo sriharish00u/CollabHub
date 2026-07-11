@@ -1,159 +1,12 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>User Profile | CollabHub</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-bright": "#fcf8ff",
-                    "on-surface-variant": "#464554",
-                    "secondary": "#9d4300",
-                    "secondary-fixed-dim": "#ffb690",
-                    "on-error": "#ffffff",
-                    "tertiary": "#692400",
-                    "on-surface": "#1b1b23",
-                    "inverse-on-surface": "#f3effb",
-                    "error": "#ba1a1a",
-                    "on-tertiary-fixed": "#360f00",
-                    "on-secondary": "#ffffff",
-                    "surface-container-low": "#f6f2fe",
-                    "primary-container": "#4338ca",
-                    "surface-container-high": "#eae6f3",
-                    "outline-variant": "#c7c4d7",
-                    "on-primary": "#ffffff",
-                    "on-secondary-fixed-variant": "#783200",
-                    "surface-container-highest": "#e4e1ed",
-                    "surface-container": "#f0ecf8",
-                    "tertiary-fixed-dim": "#ffb597",
-                    "on-error-container": "#93000a",
-                    "on-primary-fixed-variant": "#372abf",
-                    "primary-fixed": "#e3dfff",
-                    "on-background": "#1b1b23",
-                    "background": "#fcf8ff",
-                    "surface": "#fcf8ff",
-                    "surface-container-lowest": "#ffffff",
-                    "on-tertiary-fixed-variant": "#7d2d00",
-                    "on-tertiary": "#ffffff",
-                    "outline": "#777586",
-                    "on-primary-fixed": "#100069",
-                    "surface-tint": "#5148d7",
-                    "primary-fixed-dim": "#c3c0ff",
-                    "tertiary-fixed": "#ffdbcd",
-                    "inverse-surface": "#302f39",
-                    "error-container": "#ffdad6",
-                    "on-primary-container": "#c1beff",
-                    "primary": "#2a14b4",
-                    "tertiary-container": "#8f3400",
-                    "on-tertiary-container": "#ffb393",
-                    "inverse-primary": "#c3c0ff",
-                    "on-secondary-container": "#5c2400",
-                    "secondary-container": "#fd761a",
-                    "on-secondary-fixed": "#341100",
-                    "surface-variant": "#e4e1ed",
-                    "surface-dim": "#dcd8e4",
-                    "secondary-fixed": "#ffdbca"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "xs": "4px",
-                    "gutter": "24px",
-                    "xxl": "48px",
-                    "lg": "24px",
-                    "md": "16px",
-                    "sm": "8px",
-                    "xl": "32px"
-            },
-            "fontFamily": {
-                    "body-lg": ["Inter"],
-                    "label": ["Inter"],
-                    "h1": ["Space Grotesk"],
-                    "h6": ["Space Grotesk"],
-                    "h3": ["Space Grotesk"],
-                    "body-sm": ["Inter"],
-                    "h5": ["Space Grotesk"],
-                    "h2": ["Space Grotesk"],
-                    "h1-mobile": ["Space Grotesk"],
-                    "caption": ["Inter"],
-                    "h4": ["Space Grotesk"],
-                    "body-md": ["Inter"]
-            },
-            "fontSize": {
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "label": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
-                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "h6": ["16px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "h3": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                    "h5": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                    "h2": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                    "h1-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
-                    "h4": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .skill-ring-bg { stroke: #e2e8f0; }
-        .skill-ring-active { 
-            stroke: #fd761a; 
-            stroke-dasharray: 251.32; 
-            stroke-dashoffset: calc(251.32 - (251.32 * 85) / 100);
-            transition: stroke-dashoffset 1s ease-out;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-            border: 1px solid #e2e8f0;
-        }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
-    </style>
+<link rel="stylesheet" href="/assets/css/styles.css"/>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
-<!-- TopNavBar Shell -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline h-16">
-<div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter h-full">
-<div class="flex items-center gap-xl">
-<span class="text-h4 font-h4 font-bold text-primary dark:text-primary-fixed-dim">CollabHub</span>
-<nav class="hidden md:flex items-center gap-lg">
-<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label text-label" href="feed.html">Feed</a>
-<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label text-label" href="dashboard.html">Dashboard</a>
-<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label text-label" href="create_activity.html">Create</a>
-</nav>
-</div>
-<div class="flex items-center gap-md">
-<button class="p-sm text-on-surface-variant hover:text-primary transition-colors" onclick="window.location.href='notifications.html'">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
-<img class="w-full h-full object-cover" data-alt="A close-up professional profile portrait of a young Asian woman with glasses and a friendly, confident expression. She is wearing a modern professional blazer against a softly blurred university library background. The lighting is warm and natural, following a bright light-mode aesthetic with deep indigo accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBX-ztVtftlCRu0mMVAOt4quR5bX0ouU1dpaImWhmc3kGh7IEh8tEDzaGb-pndZGcwS1JuVjadWpFNplYDiy8EG3fV08HxGGo6nX0526W1SSC-CFM1GafQQJHm-04VLKzKDXyG3dvUwVnLvpPVxC1oxZoFF5_9f0i9elUvSrxPBJP8o_mE2YFzD7paHCZKpTQYF1mXpab6sy2_xO61l_MJ98rnKRpoRxsxesFsJ9ZNxKFsjqzi8_rDpQ"/>
-</div>
-</div>
-</div>
-</header>
-<main class="pt-16 min-h-screen">
+<main class="pt-8 min-h-screen">
 <!-- Header Hero Section -->
 <section class="bg-surface-container-low border-b border-outline-variant py-xxl">
 <div class="max-w-[1200px] mx-auto px-gutter">
@@ -161,13 +14,13 @@
 <!-- Avatar & Completion -->
 <div class="relative flex-shrink-0">
 <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg">
-<img class="w-full h-full object-cover" data-alt="A professional headshot of Sarah Chen, a PhD candidate in bio-informatics. She has dark hair tied back, wearing a professional navy blue suit. The background is a clean, modern lab setting with subtle geometric patterns. High-contrast lighting emphasizes her professional and innovative academic persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-EHDakEcHYcySS66kf-jhzEh_zEjP5-ewdB0aDFxsatHFnqKCtVxjd6v3IqZ7JDIt6jOsn63R8nf7fhFALL-UJgzHAnzYrKgO_GaGBWB4X7yUHFjYt7eTj-IWkOrd3KkLgqDlXLIq3mfSQ6RNqoaceb1MjrLUvei8MyHxO6k8rZwjyUaN6pYhCm6eJEsp42pIItDfDct1qyHVAjKL-mUO9yh_VzADb1TxU130cjuV6xxr3xI5vr0Exw"/>
+<img class="w-full h-full object-cover" id="profile-avatar" src="" alt="Profile"/>
 </div>
 <div class="absolute -bottom-2 -right-2 bg-white rounded-full p-1 shadow-md">
 <svg class="w-16 h-16 transform -rotate-90">
 <circle class="skill-ring-bg" cx="32" cy="32" fill="transparent" r="28" stroke-width="4"></circle>
 <circle class="skill-ring-active" cx="32" cy="32" fill="transparent" r="28" stroke-linecap="round" stroke-width="4"></circle>
-<text class="font-h5 text-h5 fill-on-surface-variant" dominant-baseline="middle" style="font-size: 14px;" text-anchor="middle" transform="rotate(90)" x="32" y="-32">85%</text>
+<text class="font-h5 text-h5 fill-on-surface-variant" dominant-baseline="middle" id="skill-pct" style="font-size: 14px;" text-anchor="middle" transform="rotate(90)" x="32" y="-32"></text>
 </svg>
 </div>
 </div>
@@ -175,22 +28,20 @@
 <div class="flex-grow text-center md:text-left">
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-sm">
 <div>
-<h1 class="font-h2 text-h2 text-on-surface">Sarah Chen</h1>
+<h1 class="font-h2 text-h2 text-on-surface" id="profile-name"></h1>
 <p class="font-h6 text-h6 text-primary flex items-center justify-center md:justify-start gap-xs">
 <span class="material-symbols-outlined" style="font-size: 18px;">school</span>
-                                    Bio-Informatics, PhD Cand. • Stanford University
-                                </p>
+<span id="profile-dept-college"></span>
+</p>
 </div>
 <div class="flex gap-sm justify-center">
-<button class="px-lg py-sm bg-primary text-on-primary font-label text-label rounded-lg hover:opacity-90 active:scale-95 transition-all">Edit Profile</button>
 <a href="settings.html" class="px-lg py-sm border border-primary text-primary font-label text-label rounded-lg hover:bg-primary-fixed transition-all inline-flex items-center">
 <span class="material-symbols-outlined text-[18px] mr-1">settings</span>
                                     Settings
                                 </a>
 </div>
 </div>
-<p class="max-w-2xl font-body-md text-on-surface-variant leading-relaxed">
-                            Interdisciplinary researcher focusing on the intersection of Nanotechnology and Genome Sequencing. Passionate about building collaborative pipelines for environmental sustainability through skill-verified academic partnerships.
+<p class="max-w-2xl font-body-md text-on-surface-variant leading-relaxed" id="profile-bio">
                         </p>
 </div>
 </div>
@@ -206,48 +57,24 @@
 <div class="space-y-md">
 <div class="flex justify-between items-center p-md bg-surface-container rounded-lg">
 <div class="flex flex-col">
-<span class="font-label text-label text-on-surface-variant">Matches Made</span>
-<span class="font-h4 text-h4 text-secondary">24</span>
+<span class="font-label text-label text-on-surface-variant">Skills</span>
+<span class="font-h4 text-h4 text-secondary" id="stat-skills">0</span>
 </div>
-<span class="material-symbols-outlined text-secondary">handshake</span>
-</div>
-<div class="flex justify-between items-center p-md bg-surface-container rounded-lg">
-<div class="flex flex-col">
-<span class="font-label text-label text-on-surface-variant">Activities Joined</span>
-<span class="font-h4 text-h4 text-primary">12</span>
-</div>
-<span class="material-symbols-outlined text-primary">groups</span>
+<span class="material-symbols-outlined text-secondary">verified</span>
 </div>
 <div class="flex justify-between items-center p-md bg-surface-container rounded-lg">
 <div class="flex flex-col">
-<span class="font-label text-label text-on-surface-variant">Skill Endorsements</span>
-<span class="font-h4 text-h4 text-primary">156</span>
+<span class="font-label text-label text-on-surface-variant">Email</span>
+<span class="font-body-sm text-body-sm text-primary truncate max-w-[160px]" id="stat-email"></span>
 </div>
-<span class="material-symbols-outlined text-primary">verified</span>
+<span class="material-symbols-outlined text-primary">mail</span>
 </div>
+<div class="flex justify-between items-center p-md bg-surface-container rounded-lg">
+<div class="flex flex-col">
+<span class="font-label text-label text-on-surface-variant">Year</span>
+<span class="font-body-sm text-body-sm text-primary" id="stat-year"></span>
 </div>
-</div>
-<!-- Achievements -->
-<div class="glass-card rounded-xl p-lg shadow-sm">
-<h3 class="font-h6 text-h6 mb-lg border-b border-outline-variant pb-sm">Achievements</h3>
-<div class="flex flex-wrap gap-md">
-<div class="flex flex-col items-center gap-xs w-[calc(50%-8px)]">
-<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-sm border border-secondary">
-<span class="material-symbols-outlined">emoji_events</span>
-</div>
-<span class="font-caption text-caption text-center">Hackathon Winner</span>
-</div>
-<div class="flex flex-col items-center gap-xs w-[calc(50%-8px)]">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-sm border border-primary-container">
-<span class="material-symbols-outlined">star</span>
-</div>
-<span class="font-caption text-caption text-center">Top Contributor</span>
-</div>
-<div class="flex flex-col items-center gap-xs w-[calc(50%-8px)]">
-<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface shadow-sm border border-outline">
-<span class="material-symbols-outlined">biotech</span>
-</div>
-<span class="font-caption text-caption text-center">Verified Researcher</span>
+<span class="material-symbols-outlined text-primary">calendar_today</span>
 </div>
 </div>
 </div>
@@ -258,68 +85,9 @@
 <section class="glass-card rounded-xl p-lg shadow-sm">
 <div class="flex justify-between items-center mb-lg">
 <h2 class="font-h4 text-h4">Verified Skills</h2>
-<button class="flex items-center gap-xs font-label text-label text-primary hover:underline" onclick="toggleModal()">
-<span class="material-symbols-outlined" style="font-size: 20px;">add_circle</span>
-                            Add Skill
-                        </button>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-<!-- Skill Chip Level 5 -->
-<div class="flex items-center justify-between p-md bg-primary-container text-on-primary rounded-lg border border-primary-container">
-<div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-[16px]">verified</span>
-<span class="font-label text-label">Genomic Sequencing</span>
-</div>
-<div class="flex gap-1">
-<div class="w-2 h-2 rounded-full bg-white"></div>
-<div class="w-2 h-2 rounded-full bg-white"></div>
-<div class="w-2 h-2 rounded-full bg-white"></div>
-<div class="w-2 h-2 rounded-full bg-white"></div>
-<div class="w-2 h-2 rounded-full bg-white"></div>
-</div>
-</div>
-<!-- Skill Chip Level 4 -->
-<div class="flex items-center justify-between p-md bg-primary-fixed text-on-primary-fixed rounded-lg border border-primary-container/20">
-<div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-[16px]">verified</span>
-<span class="font-label text-label">Data Analysis</span>
-</div>
-<div class="flex gap-1">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary-container/20"></div>
-</div>
-</div>
-<!-- Skill Chip Level 3 -->
-<div class="flex items-center justify-between p-md bg-surface-container text-on-surface-variant rounded-lg border border-outline-variant">
-<div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-[16px]">verified</span>
-<span class="font-label text-label">Python / R</span>
-</div>
-<div class="flex gap-1">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-</div>
-</div>
-<!-- Skill Chip Level 2 -->
-<div class="flex items-center justify-between p-md bg-surface-container text-on-surface-variant rounded-lg border border-outline-variant">
-<div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-[16px]">verified</span>
-<span class="font-label text-label">Machine Learning</span>
-</div>
-<div class="flex gap-1">
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-primary"></div>
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-</div>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md" id="skills-grid">
+<p class="font-body-sm text-on-surface-variant col-span-full" id="skills-loading">Loading skills...</p>
 </div>
 </section>
 <!-- Project Portfolio Tabs -->
@@ -327,151 +95,19 @@
 <div class="flex border-b border-outline-variant mb-lg">
 <button class="px-xl py-md border-b-2 border-primary text-primary font-h6 text-h6 transition-all" id="tab-created" onclick="switchTab('created')">Created Activities</button>
 <button class="px-xl py-md border-b-2 border-transparent text-on-surface-variant font-h6 text-h6 hover:text-primary transition-all" id="tab-joined" onclick="switchTab('joined')">Joined Teams</button>
-<button class="px-xl py-md border-b-2 border-transparent text-on-surface-variant font-h6 text-h6 hover:text-primary transition-all" id="tab-achievements" onclick="switchTab('achievements-tab')">Full Portfolio</button>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-md" id="content-created">
-<!-- Activity Card -->
-<div class="bg-surface border border-outline-variant rounded-xl overflow-hidden hover:border-primary transition-all flex flex-col group">
-<div class="h-32 bg-primary-fixed relative overflow-hidden">
-<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
-<div class="absolute top-sm right-sm px-sm py-xs bg-white/90 rounded font-caption text-caption">2 days ago</div>
-</div>
-<div class="p-lg">
-<h4 class="font-h5 text-h5 mb-xs group-hover:text-primary transition-colors">Nanotech Filtration</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-md line-clamp-2">Researching next-gen polymer membranes for desalination. Looking for chemical engineers.</p>
-<div class="flex items-center justify-between">
-<div class="flex -space-x-2">
-<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container"></div>
-<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container"></div>
-<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center text-[10px] font-bold">+4</div>
-</div>
-<button class="text-primary font-label text-label flex items-center gap-xs" onclick="window.location.href='activity_detail.html'">
-                                        View Details
-                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Activity Card 2 -->
-<div class="bg-surface border border-outline-variant rounded-xl overflow-hidden hover:border-primary transition-all flex flex-col group">
-<div class="h-32 bg-secondary-fixed relative overflow-hidden">
-<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary via-transparent to-transparent"></div>
-<div class="absolute top-sm right-sm px-sm py-xs bg-white/90 rounded font-caption text-caption">1 week ago</div>
-</div>
-<div class="p-lg">
-<h4 class="font-h5 text-h5 mb-xs group-hover:text-primary transition-colors">Bio-Synth Ethics Panel</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-md line-clamp-2">Monthly symposium discussing the ethical implications of CRISPR in personalized medicine.</p>
-<div class="flex items-center justify-between">
-<div class="flex -space-x-2">
-<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container"></div>
-<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container"></div>
-<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center text-[10px] font-bold">+12</div>
-</div>
-<button class="text-primary font-label text-label flex items-center gap-xs" onclick="window.location.href='activity_detail.html'">
-                                        View Details
-                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
+<p class="font-body-sm text-on-surface-variant" id="created-loading">Loading activities...</p>
 </div>
 <div class="hidden" id="content-joined">
-<div class="bg-surface-container p-xl rounded-xl text-center border border-dashed border-outline">
-<span class="material-symbols-outlined text-outline-variant text-[48px] mb-md">folder_shared</span>
-<p class="font-body-md text-on-surface-variant">Switching to Joined Teams view... (Demo content restricted)</p>
-</div>
+<p class="font-body-sm text-on-surface-variant" id="joined-loading">Loading joined teams...</p>
 </div>
 </section>
 </div>
 </div>
 </main>
-<!-- Footer Shell -->
-<footer class="bg-surface-container dark:bg-inverse-surface border-t border-outline-variant dark:border-outline py-xl mt-xxl">
-<div class="max-w-[1200px] mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-md">
-<div class="flex flex-col items-center md:items-start gap-xs">
-<span class="font-h6 text-h6 font-bold text-on-surface dark:text-inverse-on-surface">CollabHub</span>
-<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline-variant">© 2024 CollabHub. Skill-verified collaboration.</p>
-</div>
-<div class="flex gap-lg">
-<a class="font-label text-label text-on-surface-variant dark:text-outline-variant hover:underline decoration-primary" href="#">About</a>
-<a class="font-label text-label text-on-surface-variant dark:text-outline-variant hover:underline decoration-primary" href="#">Privacy</a>
-<a class="font-label text-label text-on-surface-variant dark:text-outline-variant hover:underline decoration-primary" href="#">Terms</a>
-<a class="font-label text-label text-on-surface-variant dark:text-outline-variant hover:underline decoration-primary" href="#">Support</a>
-</div>
-</div>
-</footer>
-<!-- Add Skill Modal -->
-<div class="fixed inset-0 z-[100] hidden items-center justify-center p-md" id="skill-modal">
-<div class="absolute inset-0 bg-on-surface/40 backdrop-blur-md" onclick="toggleModal()"></div>
-<div class="relative bg-white w-full max-w-md rounded-xl p-lg shadow-xl animate-in fade-in zoom-in duration-300">
-<div class="flex justify-between items-center mb-lg">
-<h3 class="font-h4 text-h4">Add New Skill</h3>
-<button class="p-xs hover:bg-surface-container rounded-full transition-colors" onclick="toggleModal()">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<form class="space-y-lg">
-<div class="space-y-sm">
-<label class="font-label text-label text-on-surface-variant">Search Skill Name</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full pl-xl pr-md py-md border-outline-variant rounded-lg focus:ring-primary focus:border-primary" placeholder="e.g. Molecular Biology" type="text"/>
-</div>
-</div>
-<div class="space-y-sm">
-<label class="font-label text-label text-on-surface-variant">Proficiency Level (1-5)</label>
-<div class="flex justify-between items-center bg-surface-container p-md rounded-lg">
-<div class="flex gap-md">
-<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-white transition-all" type="button">1</button>
-<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-white transition-all" type="button">2</button>
-<button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold" type="button">3</button>
-<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-white transition-all" type="button">4</button>
-<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center font-bold hover:bg-primary hover:text-white transition-all" type="button">5</button>
-</div>
-</div>
-</div>
-<div class="bg-primary-fixed p-md rounded-lg flex items-start gap-md">
-<span class="material-symbols-outlined text-primary">info</span>
-<p class="font-caption text-caption text-on-primary-fixed-variant">Adding a skill will flag it for peer verification. Once confirmed by 3 teammates, it becomes a 'Verified Skill'.</p>
-</div>
-<button class="w-full py-md bg-primary text-on-primary font-h6 text-h6 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all" type="button">Request Verification</button>
-</form>
-</div>
-</div>
-<script>
-        function toggleModal() {
-            const modal = document.getElementById('skill-modal');
-            modal.classList.toggle('hidden');
-            modal.classList.toggle('flex');
-        }
-
-        function switchTab(tabId) {
-            const tabs = ['created', 'joined', 'achievements'];
-            tabs.forEach(t => {
-                const btn = document.getElementById(`tab-${t}`);
-                const content = document.getElementById(`content-${t}`);
-                if(btn) {
-                    btn.classList.remove('border-primary', 'text-primary');
-                    btn.classList.add('border-transparent', 'text-on-surface-variant');
-                }
-                if(content) content.classList.add('hidden');
-            });
-
-            const activeBtn = document.getElementById(`tab-${tabId}`);
-            const activeContent = document.getElementById(`content-${tabId}`);
-            if(activeBtn) {
-                activeBtn.classList.add('border-primary', 'text-primary');
-                activeBtn.classList.remove('border-transparent', 'text-on-surface-variant');
-            }
-            if(activeContent) activeContent.classList.remove('hidden');
-        }
-
-        // Skill Ring Animation on Load
-        window.addEventListener('DOMContentLoaded', () => {
-            const circle = document.querySelector('.skill-ring-active');
-            if(circle) {
-                circle.style.strokeDashoffset = 'calc(251.32 - (251.32 * 85) / 100)';
-            }
-        });
-    </script>
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/api.js"></script>
+<script src="/assets/js/components/sidebar.js"></script>
+<script src="/assets/js/pages/profile.js"></script>
 </body></html>
