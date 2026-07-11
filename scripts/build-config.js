@@ -30,7 +30,7 @@ function loadEnv(filePath) {
 
 function main() {
   const env = loadEnv(ENV_FILE);
-  const apiUrl = process.env.API_BASE_URL || env.API_BASE_URL || 'http://localhost:8000';
+  const apiUrl = process.env.API_BASE_URL || env.API_BASE_URL;
 
   if (!fs.existsSync(TEMPLATE)) {
     console.error('Template not found:', TEMPLATE);
