@@ -5,7 +5,7 @@
 (function () {
   const BASE = (window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL);
 
-  const DEFAULT_AVATAR = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none" viewBox="0 0 80 80"><rect width="80" height="80" rx="40" fill="#c7c4d7"/><circle cx="40" cy="30" r="12" fill="#777586"/><path d="M62 58c0-12.15-9.85-22-22-22s-22 9.85-22 22" fill="#777586"/></svg>');
+  const DEFAULT_AVATAR = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none" viewBox="0 0 80 80"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fd761a"/><stop offset="100%" stop-color="#c445e0"/></linearGradient></defs><rect width="80" height="80" rx="40" fill="url(#g)"/><circle cx="40" cy="30" r="12" fill="#fff" opacity="0.9"/><path d="M62 58c0-12.15-9.85-22-22-22s-22 9.85-22 22" fill="#fff" opacity="0.9"/></svg>');
   function avatarFallback(url) { return url || DEFAULT_AVATAR; }
 
   function getToken() { return localStorage.getItem('ch_token'); }
@@ -24,7 +24,13 @@
     const res = await fetch(url, opts);
     if (res.status === 204) return null;
     const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw { status: res.status, detail: data.detail || 'Request failed' };
+    if (!res.ok) {
+      var msg;
+      if (typeof data.detail === 'string') msg = data.detail;
+      else if (Array.isArray(data.detail)) msg = data.detail.map(function (d) { return d.msg || JSON.stringify(d); }).join(', ');
+      else msg = 'Request failed';
+      throw { status: res.status, detail: msg };
+    }
     return data;
   }
 

@@ -14,6 +14,12 @@
       var name = profile.name || user?.name || 'User';
       document.getElementById('welcome-name').textContent = 'Welcome back, ' + name;
 
+      var avatarEl = document.getElementById('user-avatar');
+      if (avatarEl) {
+        var img = avatarEl.querySelector('img');
+        if (img) img.src = api.avatarFallback(profile.avatar_url);
+      }
+
       var created = activities.filter(function (a) { return a.creator_id === profile.id; });
       var joined = memberActivities.filter(function (a) { return a.creator_id !== profile.id; });
 
