@@ -872,6 +872,8 @@ input, select, textarea {
 .-translate-y-1\/2 { transform: translateY(-50%); }
 .translate-x-1\/2 { transform: translateX(50%); }
 .-translate-x-1\/2 { transform: translateX(-50%); }
+.-translate-x-full { transform: translateX(-100%); }
+.translate-x-0 { transform: translateX(0); }
 .scale-95 { transform: scale(0.95); }
 .scale-100 { transform: scale(1); }
 .scale-110 { transform: scale(1.1); }
