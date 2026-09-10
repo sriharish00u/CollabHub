@@ -75,14 +75,24 @@ async function apiRequest(endpoint, method = 'GET', body = null) {
   }
   
   try {
-    const res = await fetch(`${API_BASE}${endpoint}`, options);
+    let res = await fetch(`${API_BASE}${endpoint}`, options);
+    
+    // Fallback: If hosted backend returns 404 with /api, try endpoint without /api prefix
+    if (res.status === 404 && API_BASE.includes('onrender.com/api')) {
+      const altBase = API_BASE.replace('/api', '');
+      const altRes = await fetch(`${altBase}${endpoint}`, options);
+      if (altRes.status !== 404) {
+        res = altRes;
+      }
+    }
+
     const contentType = res.headers.get('content-type') || '';
     
     let data;
     if (contentType.includes('application/json')) {
       data = await res.json();
     } else {
-      throw new Error(`Backend server not reached (Status ${res.status}). Please run the backend server with: cd backend && python3 main.py`);
+      throw new Error(`Backend server not reached (Status ${res.status}). Please check backend API server.`);
     }
 
     if (!res.ok) {
