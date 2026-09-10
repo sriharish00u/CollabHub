@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huddle Swap - Product & Skill Swap + Team Build</title>
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- APP LAYOUT -->
+  <div class="app-layout">
+
+    <!-- SIDEBAR NAV (Desktop) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">
+          <i data-lucide="repeat"></i>
+        </div>
+        <span class="brand-name">Huddle Swap</span>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-view="dashboard">
+          <i data-lucide="grid"></i>
+          <span>Home</span>
+        </button>
+        <button class="nav-item" data-view="manage">
+          <i data-lucide="arrow-left-right"></i>
+          <span>Manage</span>
+          <span class="badge" id="swap-badge" style="display:none;">0</span>
+        </button>
+        <button class="nav-item" data-view="settings">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-actions auth-only">
+        <button class="btn btn-primary btn-block" id="btn-open-add-item">
+          <i data-lucide="plus-circle"></i> Add Item / Skill
+        </button>
+        <button class="btn btn-outline btn-block" id="btn-open-create-team">
+          <i data-lucide="users"></i> Create Team
+        </button>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="theme-toggle-box">
+          <span class="theme-label" id="theme-label">Light Blue Mode</span>
+          <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-wrapper">
+
+      <!-- TOP HEADER -->
+      <header class="top-header">
+        <div class="header-left">
+          <h2 id="page-title">Dashboard</h2>
+        </div>
+        <div class="header-right">
+          <div class="user-profile-badge" id="user-badge" style="display: none;">
+            <div class="avatar" id="avatar-initials">U</div>
+            <span id="user-display-name">User</span>
+            <button class="btn-icon" id="btn-logout" title="Logout">
+              <i data-lucide="log-out"></i>
+            </button>
+          </div>
+          <div id="auth-header-btns">
+            <button class="btn btn-sm btn-outline" id="btn-header-login">Login</button>
+            <button class="btn btn-sm btn-primary" id="btn-header-register">Register</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-container">
+
+        <!-- LANDING VIEW -->
+        <section id="landing-view" class="view-section">
+          <div class="hero-banner">
+            <span class="hero-tag">Product & Skill Swap Platform</span>
+            <h1>Trade Products, Share Skills & Build Teams</h1>
+            <p>Huddle Swap allows individuals and teams to exchange goods and expertise with zero cash needed. Request swaps, negotiate in live chat, confirm mutually, and verify delivery with two-way PIN safety.</p>
+            <div class="hero-cta">
+              <button class="btn btn-primary btn-lg" id="btn-hero-start">Get Started Free</button>
+              <button class="btn btn-outline btn-lg" id="btn-hero-explore">Browse Listings</button>
+            </div>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon"><i data-lucide="package"></i></div>
+              <h3>Product & Skill Swapping</h3>
+              <p>Offer products or skills you possess in exchange for items or expertise you need.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i data-lucide="users"></i></div>
+              <h3>Team Building</h3>
+              <p>Form hackathon, project, or startup teams by matching complementary skills.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i data-lucide="lock"></i></div>
+              <h3>Two-Way PIN Verification</h3>
+              <p>Guaranteed security with mutual confirmation, tracking links, and double 6-digit verification PINs.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- AUTH VIEW (LOGIN / REGISTER) -->
+        <section id="auth-view" class="view-section" style="display: none;">
+          <div class="auth-card">
+            <div class="auth-tabs">
+              <button class="auth-tab active" id="tab-login">Login</button>
+              <button class="auth-tab" id="tab-register">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="form-login" class="auth-form">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="login-email" required placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="login-password" required placeholder="••••••••">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="form-register" class="auth-form" style="display: none;">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="reg-name" required placeholder="Alice Vance">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="reg-email" required placeholder="alice@example.com">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="reg-password" required placeholder="At least 6 characters">
+              </div>
+              <div class="form-group">
+                <label>Bio / Background</label>
+                <input type="text" id="reg-bio" placeholder="e.g. Full-stack Dev & Retro Tech Collector">
+              </div>
+              <div class="form-group">
+                <label>Your Skills (comma separated)</label>
+                <input type="text" id="reg-skills" placeholder="Python, Graphic Design, Mechanical Keyboards">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- DASHBOARD VIEW -->
+        <section id="dashboard-view" class="view-section" style="display: none;">
+          <!-- Controls Bar -->
+          <div class="dashboard-controls">
+            <div class="search-box">
+              <i data-lucide="search"></i>
+              <input type="text" id="search-input" placeholder="Search products, skills, or teams...">
+            </div>
+
+            <div class="filter-pills">
+              <button class="pill active" data-filter="all">All</button>
+              <button class="pill" data-filter="product">Products</button>
+              <button class="pill" data-filter="skill">Skills</button>
+              <button class="pill" data-filter="team">Teams</button>
+            </div>
+          </div>
+
+          <!-- Items / Teams Grid -->
+          <div class="listings-grid" id="listings-container">
+            <!-- Dynamic content loaded via JS -->
+          </div>
+        </section>
+
+        <!-- MANAGE VIEW -->
+        <section id="manage-view" class="view-section" style="display: none;">
+          <div class="manage-tabs">
+            <button class="sub-tab active" data-tab="swaps">My Swaps & Requests</button>
+            <button class="sub-tab" data-tab="listings">My Listed Products & Skills</button>
+            <button class="sub-tab" data-tab="myteams">My Teams</button>
+          </div>
+
+          <!-- Tab 1: Swaps -->
+          <div id="subtab-swaps" class="subtab-content">
+            <div class="swaps-list" id="swaps-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Tab 2: My Listings -->
+          <div id="subtab-listings" class="subtab-content" style="display: none;">
+            <div class="listings-grid" id="my-listings-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Tab 3: My Teams -->
+          <div id="subtab-myteams" class="subtab-content" style="display: none;">
+            <div class="listings-grid" id="my-teams-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- SETTINGS VIEW -->
+        <section id="settings-view" class="view-section" style="display: none;">
+          <div class="settings-card">
+            <h3>Profile Settings</h3>
+            <form id="form-settings">
+              <div class="form-group">
+                <label>Display Name</label>
+                <input type="text" id="setting-name" required>
+              </div>
+              <div class="form-group">
+                <label>Email (Read only)</label>
+                <input type="email" id="setting-email" readonly disabled>
+              </div>
+              <div class="form-group">
+                <label>Bio</label>
+                <textarea id="setting-bio" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Skills (comma-separated)</label>
+                <input type="text" id="setting-skills">
+              </div>
+              <button type="submit" class="btn btn-primary">Save Profile</button>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- BOTTOM NAV (Mobile) -->
+    <nav class="bottom-nav">
+      <button class="bottom-nav-item active" data-view="dashboard">
+        <i data-lucide="grid"></i>
+        <span>Home</span>
+      </button>
+      <button class="bottom-nav-item" data-view="manage">
+        <i data-lucide="arrow-left-right"></i>
+        <span>Manage</span>
+      </button>
+      <button class="bottom-nav-item" data-view="settings">
+        <i data-lucide="settings"></i>
+        <span>Settings</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- MODALS -->
+
+  <!-- Modal: Add Item/Skill -->
+  <div class="modal-overlay" id="modal-add-item" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add Product or Skill</h3>
+        <button class="modal-close" data-close="modal-add-item">&times;</button>
+      </div>
+      <form id="form-add-item">
+        <div class="form-group">
+          <label>Type</label>
+          <select id="item-type" required>
+            <option value="product">Product (Physical Good)</option>
+            <option value="skill">Skill (Service / Knowledge)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="item-title" required placeholder="e.g. Mechanical Keyboard or UI/UX Design Session">
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <input type="text" id="item-category" required placeholder="e.g. Electronics, Coding, Music, Art">
+        </div>
+        <div class="form-group">
+          <label>Value Estimate ($ / relative value)</label>
+          <input type="text" id="item-value" required placeholder="e.g. $100 or 2 Hours Swap">
+        </div>
+        <div class="form-group">
+          <label>Image URL (Optional)</label>
+          <input type="url" id="item-image" placeholder="https://images.unsplash.com/...">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="item-description" rows="3" required placeholder="Describe condition, specifications, or what you can offer..."></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" data-close="modal-add-item">Cancel</button>
+          <button type="submit" class="btn btn-primary">List Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create Team -->
+  <div class="modal-overlay" id="modal-create-team" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Create a Team</h3>
+        <button class="modal-close" data-close="modal-create-team">&times;</button>
+      </div>
+      <form id="form-create-team">
+        <div class="form-group">
+          <label>Project / Team Title</label>
+          <input type="text" id="team-title" required placeholder="e.g. AI Hackathon Squad">
+        </div>
+        <div class="form-group">
+          <label>Required Skills (comma-separated)</label>
+          <input type="text" id="team-skills" required placeholder="Frontend, Python, UX Design">
+        </div>
+        <div class="form-group">
+          <label>Description & Goals</label>
+          <textarea id="team-description" rows="3" required placeholder="Explain what your team is building and who you are looking for..."></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" data-close="modal-create-team">Cancel</button>
+          <button type="submit" class="btn btn-primary">Create Team</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Request Swap -->
+  <div class="modal-overlay" id="modal-request-swap" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Request Swap</h3>
+        <button class="modal-close" data-close="modal-request-swap">&times;</button>
+      </div>
+      <form id="form-request-swap">
+        <div class="swap-request-target" id="swap-target-preview">
+          <!-- Target item info loaded dynamically -->
+        </div>
+        <div class="form-group">
+          <label>Select what you will offer in exchange:</label>
+          <select id="offer-item-select" required>
+            <!-- Options populated from current user's listings -->
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" data-close="modal-request-swap">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send Swap Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Swap Detail & Chat Drawer -->
+  <div class="modal-overlay" id="modal-swap-detail" style="display: none;">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <h3 id="swap-modal-title">Swap Discussion & Verification</h3>
+        <button class="modal-close" data-close="modal-swap-detail">&times;</button>
+      </div>
+      
+      <div class="swap-workspace" id="swap-workspace-content">
+        <!-- Loaded dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Team Chat & Workspace Drawer -->
+  <div class="modal-overlay" id="modal-team-workspace" style="display: none;">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <h3 id="team-modal-title">Team Workspace & Chat</h3>
+        <button class="modal-close" data-close="modal-team-workspace">&times;</button>
+      </div>
+      
+      <div class="swap-workspace" id="team-workspace-content">
+        <!-- Loaded dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
